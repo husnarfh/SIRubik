@@ -15,33 +15,47 @@
 
 @section('content')
 
-
+    @if(count($errors)>0)
+    @foreach($errors->all() as $error)
+    <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{$error}}
+    </div>
+    @endforeach
+    @endif
     <div class="box box-primary">
             <div class="box-header with-border">
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" method="POST" action="/admin/inputrelawan">
+              @csrf
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="email">Email address</label>
+                  <input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="password">Password</label>
+                  <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Nama Lengkap</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama lengkap">
+                  <label for="nama lengkap">Nama Lengkap</label>
+                  <input name="nama_lengkap" type="text" class="form-control" id="nama_lengkap" placeholder="Nama lengkap">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Alamat</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Jalan. RT. RW. Kelurahan.">
+                  <label for="Alamat">Alamat</label>
+                  <input name="alamat" type="text" class="form-control" id="alamat_lengkap" placeholder="Jalan. RT. RW. Kelurahan.">
                 </div>
+
+                <div class="form-group">
+                  <label for="tempat lahit">Tempat  Lahir</label>
+                  <input name="tempat_lahir" type="text" class="form-control" id="tempat_lahir" placeholder="Bojonggede.">
+                </div>
+
 
                 <div class="form-group">
                 <label>Tanggal Lahir</label>
@@ -52,9 +66,8 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                  <input name="tgl_lahir" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="dd/mm/yyyy">
                 </div>
-                <!-- /.input group -->
               </div>
 
                <div class="form-group">
@@ -66,40 +79,45 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                  <input name="tgl_masuk" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
                 </div>
-                <!-- /.input group -->
               </div>
 
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">No HP</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="0812345678">
+                  <label for="no_hp">No HP</label>
+                  <input name="no_hp" type="text" class="form-control" id="no_hp" placeholder="0812345678">
                 </div>
 
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">ID Line</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="line_id">
+                  <label for="id_line">ID Line</label>
+                  <input name="id_line" type="text" class="form-control" id="id_line" placeholder="line_id">
                 </div>
 
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Peran</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Pengajar">
+                  <label for="peran">Peran</label>
+                  <input name="peran" type="text" class="form-control" id="peran" placeholder="Pengajar">
                 </div>
 
 
 
                 <div class="form-group">
                   <label for="exampleInputFile">Pass foto</label>
-                  <input type="file" id="exampleInputFile">
+                  <input name="image" type="file" id="exampleInputFile">
 
                   <p class="help-block">Anone Anone.</p>
                 </div>
+
+                <div class="form-group">
+                  <label for="exampleInputFile">File cv relawan</label>
+                  <input name="cv" type="file" id="exampleInputFile">
+                
+                  <p class="help-block">Ini file cv.</p>
+                </div>
                 
               </div>
-              <!-- /.box-body -->
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>

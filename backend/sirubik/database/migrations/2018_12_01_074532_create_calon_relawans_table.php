@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRelawansTable extends Migration
+class CreateCalonRelawansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class CreateRelawansTable extends Migration
      */
     public function up()
     {
-        Schema::create('relawans', function (Blueprint $table) {
+        Schema::create('calon_relawans', function (Blueprint $table) {
+            
             $table->increments('id_relawan');
             $table->string('email')->unique();
             $table->string('password');
@@ -21,13 +22,15 @@ class CreateRelawansTable extends Migration
             $table->string('alamat');
             $table->string('image');
             $table->string('tempat_lahir');
-            $table->string('tanggal_lahir');
-            $table->string('waktu_masuk');
+            $table->date('tanggal_lahir');
+            $table->date('waktu_masuk');
             $table->string('no_hp');
             $table->string('id_line');
             $table->string('file_cv');
             $table->string('role');
+            $table->string('alasan_masuk');
             $table->timestamps();
+            
         });
     }
 
@@ -38,6 +41,6 @@ class CreateRelawansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relawans');
+        Schema::dropIfExists('calon_relawans');
     }
 }

@@ -15,21 +15,7 @@ class CreateTable extends Migration
     {
         Schema::defaultStringLength(191);
 
-        Schema::create('relawan', function (Blueprint $table) {
-            $table->increments('id_relawan');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('nama_lengkap');
-            $table->string('alamat');
-            $table->string('pas_foto');
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->date('waktu_masuk');
-            $table->string('no_hp');
-            $table->string('id_line');
-            $table->string('role');
-        });
-
+       
         Schema::create('pengurus', function (Blueprint $table) {
             $table->increments('id_pengurus');
             $table->string('email')->unique();
@@ -46,22 +32,12 @@ class CreateTable extends Migration
         });
 
 
-        Schema::create('lamaran', function (Blueprint $table) {
-            $table->increments('id_lamaran');
-            $table->string('nama_lengkap');
-            $table->string('email')->unique();
-            $table->string('alamat');
-            $table->date('tanggal_lahir');
-            $table->string('pas_foto');
-            $table->string('tempat_lahir');
-            $table->string('no_hp');
-            $table->string('id_line');
-            $table->string('alasan_masuk');
-        });
+
 
         Schema::create('jadwal', function (Blueprint $table) {
             $table->increments('id_jadwal');
             $table->string('id_mata_pelajaran');
+            $table->string('id_relawan');
             $table->string('tempat');
             $table->time('waktu');
             $table->timestamps();
@@ -69,12 +45,15 @@ class CreateTable extends Migration
 
         Schema::create('mata_pelajaran', function (Blueprint $table) {
             $table->increments('id_mata_pelajaran');
+            $table->string('mata_pelajaran');
             $table->timestamps();
         });
         
         Schema::create('materi', function (Blueprint $table) {
             $table->increments('id_materi');
-            $table->string('materi');
+            $table->string('deskripsi');
+            $table->string('id_mata_pelajaran');
+            $table->string('file_materi');
             $table->timestamps();
         });
 
