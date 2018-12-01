@@ -31,7 +31,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Jadwal Mahasiswa
+        Daftar Calon Pengajar
       </h1>
     </section>
 
@@ -41,7 +41,7 @@
         <div class="col-xs-12">
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#semester_1" data-toggle="tab">Tabel Seluruh Jadwal Mahasiswa</a></li>
+                  <li class="active"><a href="#semester_1" data-toggle="tab">Tabel Seluruh Calon Pengajar</a></li>
                   <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                 </ul>
                 <div class="tab-content">
@@ -50,10 +50,9 @@
                           <thead>
                           <tr>
                               <th>Nomor</th>
-                              <th>Nama Mahasiswa</th>
-                              <th>Nomor Induk</th>
+                              <th>Nama Lengkap</th>
                               <th>Id</th>
-                              <th>Semester</th>
+                              <th>Alasan Masuk</th>
                               <th>Detail</th>
                           </tr>
                           </thead>
@@ -66,7 +65,6 @@
                               <tr>
                                   <td>{{$i++}}</td>
                                   <td>{{$mahasiswa->name}}</td>
-                                  <td>{{$mahasiswa->nomor_induk}}</td>
                                   <td>{{$mahasiswa->id}}</td>
                                   <td>{{$mahasiswa->semester}}</td>
                                   <td>
@@ -75,10 +73,10 @@
                                     <br>
                                     <br>
                                     <form action="{{route('approveJadwal', $mahasiswa->id)}}" method="post">{{csrf_field()}}
-                                      <button type="submit" class="btn btn-success">Approve Jadwal</button>
+                                      <button type="submit" class="btn btn-success">Terima</button>
                                     </form>
                                     <br><form action="{{route('disapproveJadwal', $mahasiswa->id)}}" method="post">{{csrf_field()}}
-                                      <button type="submit" class="btn btn-danger">Tolak Jadwal</button>
+                                      <button type="submit" class="btn btn-danger">Tolak</button>
                                     </form>
                                   </div>
                                   </td>
@@ -88,10 +86,10 @@
                           <tfoot>
                           <tr>
                             <th>Nomor</th>
-                            <th>Nama Mahasiswa</th>
-                            <th>Nomor Induk</th>
+                            <th>Nama Lengkap</th>
                             <th>Id</th>
-                            <th>Semester</th>
+                            <th>Alasan Masuk</th>
+                            <th>Detail</th>
                           </tr>
                           </tfoot>
                         </table>
