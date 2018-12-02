@@ -11,7 +11,14 @@
 |
 */
 
+Auth::routes();
+Auth::routes();
+Auth::routes();
 Route::get('/', function () {return view('/templates/login');});
+Route::get('/admin', function () {
+    return view('templates/login');
+});
+
 Route::get('/home', function () {
     if(!Auth::user())
         return redirect('login');
@@ -24,11 +31,9 @@ Route::get('/home', function () {
 Route::get('/buatJadwal/{id_matkul}/{semester}', 'JadwalController@buatJadwal')->name('makeJadwal');
 Route::get('/hapusJadwal/{id_jadwal}', 'JadwalController@hapusJadwal')->name('hapusJadwal');
 
-Route::get('/login', function () {
-    return view('templates/login');
-});
 
-Route::get('/register', function () {
+
+Route::get('/admin_register', function () {
     return view('templates/register');
 });
 
@@ -81,5 +86,7 @@ Route::post('/approveJadwal/{id}', 'ApproveController@approveJadwal')->name('app
 Route::post('/disapproveJadwal/{id}', 'ApproveController@disapproveJadwal')->name('disapproveJadwal');
 
 
-Auth::routes();
 
+
+
+Auth::routes();
