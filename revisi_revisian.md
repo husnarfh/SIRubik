@@ -54,7 +54,8 @@
    d. kelas (string)
    e. id_uploader (string) <= id_relawan | 1 if admin
 
-
+6. Pesan
+   Still thinking
    
 ### Workflow
 
@@ -68,3 +69,7 @@
     5. Melakukan view pada pesan (would revision)
     6. FEATURE. Melakukan insert pada jadwal. (would revision)
     7. FEATURE. Melakukan view pada jadwal. (would revision)
+
+4. Workflow relawan
+   1. Calon relawan register via apps. akan dilakukan seleksi. Jika diterima calon akan menjadi relawan dan dapat melakukan login pada sistem
+   2. 
