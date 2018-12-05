@@ -38,60 +38,59 @@ class relawanseed extends Seeder
         //     $table->string('role');
         //     $table->timestamps();
         // });
-      //   Relawan::insert([
-    		// [
-    		// 	'email'			=> 'husnarfh@gmail.com',
-    		// 	'password'		=> Hash::make("admina"),
-      //           'nama_lengkap' => "husna nurarifah",
-      //           'alamat' => "cibanteng",
-      //           'image' => 'anonimus.jpg',
-      //           'tempat_lahir' => "01/01/1998",
-      //           'tanggal_lahir' => "01/01/1998",
-      //           'waktu_masuk' => "01/01/1998",
-      //           'no_hp' => "08123456789",
-      //           'file_cv' => "dummy_cv.pdf",
-      //           'role' => "knight",
-      //           'id_line' => "husnarfh",
-      //           'created_at' => date('Y-m-d H:i:s'),
-      //           'updated_at' => date('Y-m-d H:i:s')
+        Relawan::insert([
+    		[
+    			'email'			=> 'husnarfh@gmail.com',
+    			'password'		=> Hash::make("admina"),
+                'nama_lengkap' => "husna nurarifah",
+                'alamat' => "cibanteng",
+                'image' => 'anonimus.jpg',
+                'tempat_lahir' => "01/01/1998",
+                'tanggal_lahir' => "01/01/1998",
+                'waktu_masuk' => "01/01/1998",
+                'no_hp' => "08123456789",
+                'file_cv' => "dummy_cv.pdf",
+                'role' => "knight",
+                'id_line' => "husnarfh",
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
  
-      //       ],
-      //       [
-    		// 	'email'			=> 'husnarfh@gmail.com',
-    		// 	'password'		=> Hash::make("admina"),
-      //           'nama_lengkap' => "husna nurarifah",
-      //           'alamat' => "cibanteng",
-      //           'image' => 'anonimus.jpg',
-      //           'tempat_lahir' => "01/01/1998",
-      //           'tanggal_lahir' => "01/01/1998",
-      //           'waktu_masuk' => "01/01/1998",
-      //           'no_hp' => "08123456789",
-      //           'file_cv' => "dummy_cv.pdf",
-      //           'role' => "knight",
-      //           'id_line' => "res23tri",
-      //           'created_at' => date('Y-m-d H:i:s'),
-      //           'updated_at' => date('Y-m-d H:i:s')
-      //       ],
+            ],[
+    			'email'			=> 'alfakatsuki@gmail.com',
+    			'password'		=> Hash::make("admina"),
+                'nama_lengkap' => "husna nurarifah",
+                'alamat' => "cibanteng",
+                'image' => 'anonimus.jpg',
+                'tempat_lahir' => "01/01/1998",
+                'tanggal_lahir' => "01/01/1998",
+                'waktu_masuk' => "01/01/1998",
+                'no_hp' => "08123456789",
+                'file_cv' => "dummy_cv.pdf",
+                'role' => "knight",
+                'id_line' => "res23tri",
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
 
-      //       [
-    		// 	'email'			=> 'okimonoki@gmail.com',
-    		// 	'password'		=> Hash::make("admina"),
-      //           'nama_lengkap' => "ahmad syauqi",
-      //           'alamat' => "cibanteng",
-      //           'image' => 'anonimus.jpg',
-      //           'tempat_lahir' => "01/01/1998",
-      //           'tanggal_lahir' => "01/01/1998",
-      //           'waktu_masuk' => "01/01/1998",
-      //           'no_hp' => "08123456789",
-      //           'file_cv' => "dummy_cv.pdf",
-      //           'role' => "knight",
-      //           'id_line' => "okimonoki",
-      //           'created_at' => date('Y-m-d H:i:s'),
-      //           'updated_at' => date('Y-m-d H:i:s')
-      //       ]
+            [
+    			'email'			=> 'okimonoki@gmail.com',
+    			'password'		=> Hash::make("admina"),
+                'nama_lengkap' => "ahmad syauqi",
+                'alamat' => "cibanteng",
+                'image' => 'anonimus.jpg',
+                'tempat_lahir' => "01/01/1998",
+                'tanggal_lahir' => "01/01/1998",
+                'waktu_masuk' => "01/01/1998",
+                'no_hp' => "08123456789",
+                'file_cv' => "dummy_cv.pdf",
+                'role' => "knight",
+                'id_line' => "okimonoki",
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ]
             
             
-      //   ]);
+        ]);
         
         
     }

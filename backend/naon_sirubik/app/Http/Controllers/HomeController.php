@@ -11,7 +11,6 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Hash;
 
 
-
 class HomeController extends Controller
 {
     /**

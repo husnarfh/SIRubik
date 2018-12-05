@@ -14,7 +14,7 @@ class CreateRelawansTable extends Migration
     public function up()
     {
         Schema::create('relawans', function (Blueprint $table) {
-            $table->increments('id_relawan');
+            $table->increments('id');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('nama_lengkap');
@@ -27,6 +27,7 @@ class CreateRelawansTable extends Migration
             $table->string('id_line');
             $table->string('file_cv');
             $table->string('role');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

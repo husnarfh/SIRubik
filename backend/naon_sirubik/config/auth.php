@@ -42,8 +42,14 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+            'driver' => 'passport',
+            'provider' => 'relawans',
+        ],
+
+
+        'rel' => [
+            'driver' => 'session',
+            'provider' => 'relawans',
         ],
     ],
 
@@ -68,12 +74,16 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+            'table' => 'users'
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'relawans' => [
+            'driver' => 'eloquent',
+            'table' => 'relawans',
+            'model' => App\Relawan::class,
+        ],
+
+        
     ],
 
     /*
@@ -97,6 +107,16 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+
+
+        'relawans' => [
+            'provider' => 'relawans',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+
+
     ],
 
 ];

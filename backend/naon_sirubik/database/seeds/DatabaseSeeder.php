@@ -19,14 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {    
-    	// $this->call(relawanseed::class);
-    	// $this->call(useradminseed::class);
+    	$this->call(relawanseed::class);
+    	$this->call(useradminseed::class);
         
-        User::insert([
-            [
-                'email'         => 'admin@gmail.com',
-                'password'      => Hash::make("admina"),
-            ]
-        ]);
+        
     }
 }

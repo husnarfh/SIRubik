@@ -32,3 +32,8 @@ Route::get('/admin/matpel/form', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/admin/event', 'HomeController@index')->name('home');
 Route::get('/admin/event/form', 'HomeController@index')->name('home');
+
+
+// // Relawan functionalty
+// Route::post('/authentication', 'Authentication@login');
+// Route::get('/authentication', 'Authentication@login');
