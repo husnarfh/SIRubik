@@ -13,7 +13,8 @@ Route::post('login', 'API\RelAuthentication@login');
 // Route::post('register', 'API\RelAuthentication@register');
 Route::group(['middleware' => 'auth:api'], function(){  
     Route::post('details', 'API\RelAuthentication@details');
-    // isi fungsi fungsi
+    Route::post('infojadwal', 'API\InfoJadwal@get');
 });
+
 
 

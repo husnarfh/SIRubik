@@ -32,17 +32,6 @@ class CreateTable extends Migration
         });
 
 
-
-
-        Schema::create('jadwal', function (Blueprint $table) {
-            $table->increments('id_jadwal');
-            $table->string('id_mata_pelajaran');
-            $table->string('id_relawan');
-            $table->string('tempat');
-            $table->time('waktu');
-            $table->timestamps();
-        });
-
         Schema::create('mata_pelajaran', function (Blueprint $table) {
             $table->increments('id_mata_pelajaran');
             $table->string('mata_pelajaran');

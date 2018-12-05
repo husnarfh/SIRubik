@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     {    
     	$this->call(relawanseed::class);
     	$this->call(useradminseed::class);
-        
+        $this->call(jadwal2seed::class);
         
     }
 }

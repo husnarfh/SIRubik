@@ -21,8 +21,8 @@ class CreateRelawansTable extends Migration
             $table->string('alamat');
             $table->string('image');
             $table->string('tempat_lahir');
-            $table->string('tanggal_lahir');
-            $table->string('waktu_masuk');
+            $table->date('tanggal_lahir');
+            $table->date('waktu_masuk');
             $table->string('no_hp');
             $table->string('id_line');
             $table->string('file_cv');

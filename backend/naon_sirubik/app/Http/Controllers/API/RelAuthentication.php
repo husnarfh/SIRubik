@@ -18,9 +18,7 @@ class RelAuthentication extends Controller
 
     }
     public function login(Request $request){
-        // dd($request);
         if(Auth::guard('rel')->attempt(['email' => request('email'), 'password' => request('password') ])){
-            
             $relawan = Relawan::where('email',request('email'))->first();
             $success['token'] =  $relawan->createToken('nApp')->accessToken;
             return response()->json(['success' => $success], $this->successStatus);
@@ -29,6 +27,7 @@ class RelAuthentication extends Controller
             return response()->json(['error'=>'Unauthorised'], 401);
         }
     }
+    
     // ini ga kepake
     public function register(Request $request)
     {

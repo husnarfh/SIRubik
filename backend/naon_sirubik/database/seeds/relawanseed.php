@@ -22,22 +22,6 @@ class relawanseed extends Seeder
     public function run()
     {
 
-        //         Schema::create('relawans', function (Blueprint $table) {
-        //     $table->increments('id_relawan');
-        //     $table->string('email')->unique();
-        //     $table->string('password');
-        //     $table->string('nama_lengkap');
-        //     $table->string('alamat');
-        //     $table->string('image');
-        //     $table->string('tempat_lahir');
-        //     $table->string('tanggal_lahir');
-        //     $table->string('waktu_masuk');
-        //     $table->string('no_hp');
-        //     $table->string('id_line');
-        //     $table->string('file_cv');
-        //     $table->string('role');
-        //     $table->timestamps();
-        // });
         Relawan::insert([
     		[
     			'email'			=> 'husnarfh@gmail.com',
@@ -45,9 +29,9 @@ class relawanseed extends Seeder
                 'nama_lengkap' => "husna nurarifah",
                 'alamat' => "cibanteng",
                 'image' => 'anonimus.jpg',
-                'tempat_lahir' => "01/01/1998",
-                'tanggal_lahir' => "01/01/1998",
-                'waktu_masuk' => "01/01/1998",
+                'tempat_lahir' => "sumedeang",
+                'tanggal_lahir' => "1998-01-01",
+                'waktu_masuk' => "1998-01-01",
                 'no_hp' => "08123456789",
                 'file_cv' => "dummy_cv.pdf",
                 'role' => "knight",
@@ -58,12 +42,12 @@ class relawanseed extends Seeder
             ],[
     			'email'			=> 'alfakatsuki@gmail.com',
     			'password'		=> Hash::make("admina"),
-                'nama_lengkap' => "husna nurarifah",
+                'nama_lengkap' => "alfan",
                 'alamat' => "cibanteng",
                 'image' => 'anonimus.jpg',
-                'tempat_lahir' => "01/01/1998",
-                'tanggal_lahir' => "01/01/1998",
-                'waktu_masuk' => "01/01/1998",
+                'tempat_lahir' => "jakarta",
+                'tanggal_lahir' => "1998-01-01",
+                'waktu_masuk' => "1998-01-01",
                 'no_hp' => "08123456789",
                 'file_cv' => "dummy_cv.pdf",
                 'role' => "knight",
@@ -78,9 +62,9 @@ class relawanseed extends Seeder
                 'nama_lengkap' => "ahmad syauqi",
                 'alamat' => "cibanteng",
                 'image' => 'anonimus.jpg',
-                'tempat_lahir' => "01/01/1998",
-                'tanggal_lahir' => "01/01/1998",
-                'waktu_masuk' => "01/01/1998",
+                'tempat_lahir' => "jakarta",
+                'tanggal_lahir' => "1998-01-01",
+                'waktu_masuk' => "1998-01-01",
                 'no_hp' => "08123456789",
                 'file_cv' => "dummy_cv.pdf",
                 'role' => "knight",
