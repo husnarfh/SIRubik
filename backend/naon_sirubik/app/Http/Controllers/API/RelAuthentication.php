@@ -15,9 +15,10 @@ class RelAuthentication extends Controller
     public $successStatus = 200;
     public function getAuthIdentifierName(){
         return 'id_relawan';
-
     }
     public function login(Request $request){
+        
+        // dd($request->getContent(); ini phpinput
         if(Auth::guard('rel')->attempt(['email' => request('email'), 'password' => request('password') ])){
             $relawan = Relawan::where('email',request('email'))->first();
             $success['token'] =  $relawan->createToken('nApp')->accessToken;
@@ -29,9 +30,9 @@ class RelAuthentication extends Controller
     }
     
     // ini ga kepake
-    public function register(Request $request)
+    public function register(request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = validator::make($request->all(), [
             'nama_lengkap' => 'required',
             'email' => 'required|email',
             'password' => 'required',
@@ -41,14 +42,16 @@ class RelAuthentication extends Controller
         }
 
         $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-        $user = new Relawan;
+        $input['password'] = hash::make($input['password']);
+        $user = new relawan;
         $user->email = $input['email'];
         $user->password = $input['password'];
         $user->nama_lengkap = $input['nama_lengkap'];
-        $success['token'] =  $user->createToken('nApp')->accessToken;
+        $success['token'] =  $user->createtoken('napp')->accesstoken;
 
-        return response()->json(['success'=>$success], $this->successStatus);
+        return response()->json(['success'=>$success], $this->successstatus);
+        
+
     }
 
     public function details()
