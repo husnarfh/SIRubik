@@ -48,10 +48,8 @@ class RelAuthentication extends Controller
         $user->password = $input['password'];
         $user->nama_lengkap = $input['nama_lengkap'];
         $success['token'] =  $user->createtoken('napp')->accesstoken;
-
         return response()->json(['success'=>$success], $this->successstatus);
-        
-
+    
     }
 
     public function details()
