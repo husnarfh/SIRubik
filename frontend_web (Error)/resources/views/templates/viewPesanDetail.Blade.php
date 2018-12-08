@@ -31,7 +31,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Daftar Pesan Antar Pengajar
+        Daftar Pengajar
       </h1>
     </section>
 
