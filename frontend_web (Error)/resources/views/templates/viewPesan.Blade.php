@@ -31,55 +31,85 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tambah Materi Baru
+        Daftar Pesan Antar Pengajar
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <!-- left column -->
-        <div class="col-md-6">
-          <!-- general form elements -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Formulir Penambahan Materi</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Untuk Tingkatan</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">SD Kelas 1</option>
-                    <option>SD Kelas 1</option>
-                    <option>SD Kelas 2</option>
-                    <option>SD Kelas 3</option>
-                    <option>SD Kelas 4</option>
-                    <option>SD Kelas 5</option>
-                    <option>SD Kelas 6</option>
-                  </select>
+        <div class="col-xs-12">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#semester_1" data-toggle="tab">Tabel Seluruh Pesan Antar Pengajar</a></li>
+                  <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="semester_1">
+                        <table id="tabel_semester_1" class="table table-bordered table-striped">
+                          <thead>
+                          <tr>
+                              <th>Nomor</th>
+                              <th>ID Chat</th>
+                              <th>ID Pengajar 1</th>
+                              <th>Nama Pengajar 1</th>
+                              <th>ID Pengajar 2</th>
+                              <th>Nama Pengajar 2</th>
+                              <th>Update Terakhir</th>
+                              <th>Detail</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                              @php
+                                $mahasiswas = App\User::where('role','=','mahasiswa')->get();
+                                $i=1;
+                              @endphp
+                              @foreach ($mahasiswas as $mahasiswa)
+                              <tr>
+                                  <td>{{$i++}}</td>
+                                  <td>{{$mahasiswa->id}}</td>
+                                  <td>{{$mahasiswa->id}}</td>
+                                  <td>{{$mahasiswa->name}}</td>
+                                  <td>{{$mahasiswa->id}}</td>
+                                  <td>{{$mahasiswa->name}}</td>
+                                  <td>{{$mahasiswa->name}}</td>
+                                  <td>{{$mahasiswa->semester}}</td>
+                                  <td>
+                                    <div class="box-footer">
+                                        <a href="/jadwalMHS/{{$mahasiswa->id}}"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
+                                    <br>
+                                    <br>
+                                    <form action="{{route('disapproveJadwal', $mahasiswa->id)}}" method="post">{{csrf_field()}}
+                                      <button type="submit" class="btn btn-danger">Hapus History Pesan</button>
+                                    </form>
+                                  </div>
+                                  </td>
+                                </tr>
+                              @endforeach
+                          </tbody>
+                          <tfoot>
+                          <tr>
+                            <th>Nomor</th>
+                            <th>ID Chat</th>
+                            <th>ID Pengajar 1</th>
+                            <th>Nama Pengajar 1</th>
+                            <th>ID Pengajar 2</th>
+                            <th>Nama Pengajar 2</th>
+                            <th>Update Terakhir</th>
+                            <th>Detail</th>
+                          </tr>
+                          </tfoot>
+                        </table>
+                  </div>
+                  <!-- /.tab-pane -->
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Nama Materi</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nama Materi">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Ukuran file tidak boleh melebihi 1 GB.</p>
-                </div>
+                <!-- /.tab-content -->
               </div>
-              <!-- /.box-body -->
 
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Upload</button>
-              </div>
-            </form>
-          </div>
-          <!-- /.box -->
+
+        </div>
+        <!-- /.col -->
+      </div>
       <!-- /.row -->
     </section>
     <!-- /.content -->
