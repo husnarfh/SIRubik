@@ -31,7 +31,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Daftar Pengajar
+        Detail Pesan {ID PESAN DISINI}
       </h1>
     </section>
 
@@ -50,12 +50,10 @@
                           <thead>
                           <tr>
                               <th>Nomor</th>
-                              <th>ID Chat</th>
-                              <th>ID Pengajar 1</th>
-                              <th>Nama Pengajar 1</th>
-                              <th>ID Pengajar 2</th>
-                              <th>Nama Pengajar 2</th>
-                              <th>Detail</th>
+                              <th>ID Pengirim</th>
+                              <th>Pesan</th>
+                              <th>Attached Files</th>
+                              <th>Terkirim Pada</th>
                           </tr>
                           </thead>
                           <tbody>
@@ -70,29 +68,16 @@
                                   <td>{{$mahasiswa->name}}</td>
                                   <td>{{$mahasiswa->id}}</td>
                                   <td>{{$mahasiswa->name}}</td>
-                                  <td>{{$mahasiswa->semester}}</td>
-                                  <td>
-                                    <div class="box-footer">
-                                        <a href="/jadwalMHS/{{$mahasiswa->id}}"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
-                                    <br>
-                                    <br>
-                                    <form action="{{route('disapproveJadwal', $mahasiswa->id)}}" method="post">{{csrf_field()}}
-                                      <button type="submit" class="btn btn-danger">Hapus History Pesan</button>
-                                    </form>
-                                  </div>
-                                  </td>
                                 </tr>
                               @endforeach
                           </tbody>
                           <tfoot>
                           <tr>
                             <th>Nomor</th>
-                            <th>ID Chat</th>
-                            <th>ID Pengajar 1</th>
-                            <th>Nama Pengajar 1</th>
-                            <th>ID Pengajar 2</th>
-                            <th>Nama Pengajar 2</th>
-                            <th>Detail</th>
+                            <th>ID Pengirim</th>
+                            <th>Pesan</th>
+                            <th>Attached Files</th>
+                            <th>Terkirim Pada</th>
                           </tr>
                           </tfoot>
                         </table>

@@ -55,6 +55,7 @@
                               <th>Nama Pengajar 1</th>
                               <th>ID Pengajar 2</th>
                               <th>Nama Pengajar 2</th>
+                              <th>Update Terakhir</th>
                               <th>Detail</th>
                           </tr>
                           </thead>
@@ -67,8 +68,10 @@
                               <tr>
                                   <td>{{$i++}}</td>
                                   <td>{{$mahasiswa->id}}</td>
+                                  <td>{{$mahasiswa->id}}</td>
                                   <td>{{$mahasiswa->name}}</td>
                                   <td>{{$mahasiswa->id}}</td>
+                                  <td>{{$mahasiswa->name}}</td>
                                   <td>{{$mahasiswa->name}}</td>
                                   <td>{{$mahasiswa->semester}}</td>
                                   <td>
@@ -92,6 +95,7 @@
                             <th>Nama Pengajar 1</th>
                             <th>ID Pengajar 2</th>
                             <th>Nama Pengajar 2</th>
+                            <th>Update Terakhir</th>
                             <th>Detail</th>
                           </tr>
                           </tfoot>
