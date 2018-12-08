@@ -28,15 +28,19 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('profileedit', 'API\Profile@edit_profile');
     Route::post('profilesendiri', 'API\Profile@get_self');
 
+
+    // belom
     Route::post('editpassword', 'API\Profile@edit_password');
 
 
     // materi
-    // Route::post('showmateri', 'API\Materi@get_all');
-    // Route::post('showmateri', 'API\Materi@get_self');
-    // Route::post('profilesendiri', 'API\Materi@get_self');
-    // Route::post('profilesendiri', 'API\Materi@get_self');
     
+    Route::post('materishow', 'API\MateriController@get');
+    Route::post('materiupload', 'API\MateriController@upload');
+    Route::post('materidelete', 'API\MateriController@delete');
+
+
+    // chat
 
 });
 

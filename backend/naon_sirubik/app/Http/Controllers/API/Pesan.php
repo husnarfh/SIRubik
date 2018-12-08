@@ -11,5 +11,5 @@ use Illuminate\Support\Facades\Hash;
 
 class Pesan extends Controller
 {
-    //
+    
 }

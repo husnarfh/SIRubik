@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Hash;
 class Profile extends Controller
 {
     public function get_self(Request $request){
-        // select jadwal where id == $id
+        
         $req = json_decode($request->getContent());
+        
         $user = Auth::user();
         $id = $user->id; 
         $rel = Relawan::where('id', $id);
@@ -33,7 +34,6 @@ class Profile extends Controller
     }
 
     public function get_other(Request $request){
-        // select jadwal where id == $id
         $req = json_decode($request->getContent());
         $id = $req->id; 
         $rel = Relawan::where('id', $id);
@@ -42,21 +42,39 @@ class Profile extends Controller
     }
 
     public function get_all(Request $request){
-        $data = Relawan::orderBy('nama_lengkap', 'asc')->get(['email', 'nama_lengkap', 'alamat', 'image', 'tempat_lahir', 'tanggal_lahir', 'waktu_masuk', 'no_hp', 'id_line', 'role']);
+        $data = Relawan::orderBy('nama_lengkap', 'asc')->get(
+            ['email', 'nama_lengkap', 'alamat',
+             'image', 'tempat_lahir', 'tanggal_lahir',
+             'waktu_masuk', 'no_hp', 'id_line', 'role']);
         return response()->json($data);
     }
 
     public function edit_profile(Request $request){
         $req = json_decode($request->getContent());
-        
+        $rules = [
+            'no_hp' => 'digits|required',
+        ];
+
+        $validator = validator::make((array)$req, $rules);
         $user = Auth::user();
         $id = $user->id; 
         $rel = Relawan::where('id', $id)->first();
-        // sayang dibuang hehe
-        // $rel = ($rel->getAttributes());
-        
+        $attr = array();
+        foreach ($rel->toArray() as $key => $value) {
+            array_push($attr, $key);
+        }
         foreach ($req as $key => $value) {
-            $rel->$key = $req->$key;
+            
+            if(in_array($key, $attr) == False){
+                $messages = "Failed saved";
+                $status = 404;
+                $data =array(
+                         'message' => $messages,
+                         'status' => $status
+                );        
+                return json_encode($data);
+            }
+            $rel->$key = $value;
         }
         $rel->save();
         $messages = "Profile updated";
@@ -68,16 +86,8 @@ class Profile extends Controller
         return json_encode($data);
     }
 
-
-
     // still not work. ga tau kenapa
     public function edit_password(Request $request){
-        // {"old_password":"admina", "new_password":"admina"}
-        // $validator = validator::make($request->all(), [
-        //     'password' => 'required',
-        //     'old_password' => 'required',
-        // ]);
-        
 
         $req = json_decode($request->getContent());
         $old = $req->old_password; 
@@ -87,8 +97,7 @@ class Profile extends Controller
         $id = $user->id; 
         $rel = Relawan::where('id', $id)->first();
         $status = 200;
-        // dd([$rel->password, bcrypt($old), $old]);
-        if($rel->password == $old){
+        if($rel->password !== $old){
             $messages = "Password lama tidak sesuai";
             $status = 404;    
         }
