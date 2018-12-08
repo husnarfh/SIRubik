@@ -73,7 +73,7 @@ class HomeController extends Controller
             $relawan->file_cv = 'null.pdf';
         }
         $relawan->email     = $request->input('email');
-        $relawan->password = Hash::make($request->input('password'));
+        $relawan->password = bcrypt($request->input('password'));
         $relawan->nama_lengkap = $request->input('nama_lengkap');
         $relawan->alamat = $request->input('alamat');
         $relawan->tempat_lahir = $request->input('tempat_lahir');

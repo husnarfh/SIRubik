@@ -25,7 +25,7 @@ class relawanseed extends Seeder
         Relawan::insert([
     		[
     			'email'			=> 'husnarfh@gmail.com',
-    			'password'		=> Hash::make("admina"),
+    			'password'		=> bcrypt("admina"),
                 'nama_lengkap' => "husna nurarifah",
                 'alamat' => "cibanteng",
                 'image' => 'anonimus.jpg',
@@ -41,7 +41,7 @@ class relawanseed extends Seeder
  
             ],[
     			'email'			=> 'alfakatsuki@gmail.com',
-    			'password'		=> Hash::make("admina"),
+    			'password'		=> bcrypt("admina"),
                 'nama_lengkap' => "alfan",
                 'alamat' => "cibanteng",
                 'image' => 'anonimus.jpg',
@@ -58,7 +58,7 @@ class relawanseed extends Seeder
 
             [
     			'email'			=> 'okimonoki@gmail.com',
-    			'password'		=> Hash::make("admina"),
+    			'password'		=> bcrypt("admina"),
                 'nama_lengkap' => "ahmad syauqi",
                 'alamat' => "cibanteng",
                 'image' => 'anonimus.jpg',

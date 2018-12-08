@@ -12,8 +12,10 @@
 Route::post('login', 'API\RelAuthentication@login');
 // Route::post('register', 'API\RelAuthentication@register');
 Route::group(['middleware' => 'auth:api'], function(){  
+    
+    Route::post('logout', 'API\RelAuthentication@logout');
 
-    Route::post('details', 'API\RelAuthentication@details');
+    // Route::post('details', 'API\RelAuthentication@details');
 
     // info jadwal
     Route::post('infojadwal', 'API\InfoJadwal@get_all');
@@ -21,10 +23,13 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('infojadwallain', 'API\InfoJadwal@get_other');
 
     // info 
-    Route::post('profile', 'API\Profile@get_all');
+    Route::post('profileall', 'API\Profile@get_all');
     Route::post('profileorang', 'API\Profile@get_other');
-    Route::post('editprofile', 'API\Profile@edit');
+    Route::post('profileedit', 'API\Profile@edit_profile');
     Route::post('profilesendiri', 'API\Profile@get_self');
+
+    Route::post('editpassword', 'API\Profile@edit_password');
+
 
     // materi
     // Route::post('showmateri', 'API\Materi@get_all');

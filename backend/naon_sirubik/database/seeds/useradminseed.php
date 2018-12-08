@@ -16,7 +16,7 @@ class useradminseed extends Seeder
     	User::insert([
     		[
     			'email'			=> 'admin@gmail.com',
-    			'password'		=> Hash::make("admina"),
+    			'password'		=> bcrypt("admina"),
     		]
     	]);
     }

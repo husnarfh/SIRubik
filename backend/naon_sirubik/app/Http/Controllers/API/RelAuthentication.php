@@ -12,20 +12,36 @@ use Illuminate\Support\Facades\Hash;
 class RelAuthentication extends Controller
 {
 
-    public $successStatus = 200;
+    // public $successStatus = 200;
     public function getAuthIdentifierName(){
         return 'id_relawan';
     }
+
     public function login(Request $request){
         
-        // dd($request->getContent(); ini phpinput
-        if(Auth::guard('rel')->attempt(['email' => request('email'), 'password' => request('password') ])){
-            $relawan = Relawan::where('email',request('email'))->first();
-            $success['token'] =  $relawan->createToken('nApp')->accessToken;
-            return response()->json(['success' => $success], $this->successStatus);
+        $req = json_decode($request->getContent());
+
+
+        if(Auth::guard('rel')->attempt(['email' => $req->email, 'password' => $req->password ])){
+            $relawan = Relawan::where('email',$req->email)->first();
+            // return response()->json(['success' => $success], $this->successStatus);
+            $da['token'] =  $relawan->createToken('token')->accessToken;
+              $data =array(
+                'message' => "Login Success",
+                'data'  => $da,
+                'status' => "200"
+            );
+            return json_encode($data);   
+            
         }
         else{
-            return response()->json(['error'=>'Unauthorised'], 401);
+            // return response()->json(['error'=>'Unauthorised'], 401);
+            
+            $data =array(
+                 'message' => "Login Failed, Email or Password Wrong",
+                 'status' => "404"
+           );
+            return json_encode($data);            
         }
     }
     
@@ -42,19 +58,41 @@ class RelAuthentication extends Controller
         }
 
         $input = $request->all();
-        $input['password'] = hash::make($input['password']);
+        $input['password'] = bcrypt($input['password']);
         $user = new relawan;
         $user->email = $input['email'];
         $user->password = $input['password'];
         $user->nama_lengkap = $input['nama_lengkap'];
-        $success['token'] =  $user->createtoken('napp')->accesstoken;
+        $success['token'] =  $user->createtoken('token')->accesstoken;
         return response()->json(['success'=>$success], $this->successstatus);
     
     }
 
+    public function logout(request $request){
+
+        if (Auth::check()) {
+            $user = Auth::user()->token();
+            $user->revoke();
+            $data =array(
+                 'message' => "Logout Success",
+                 'status' => "200"
+             );
+            return json_encode($data);   
+
+        }
+        $data =array(
+                 'message' => "Logout",
+                 'status' => "404"
+             );
+            return json_encode($data);   
+
+    }
+
+    // not used too
     public function details()
     {
         $user = Auth::user();   
         return response()->json(['success' => $user], $this->successStatus);
     }
+
 }
