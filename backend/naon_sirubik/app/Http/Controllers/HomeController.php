@@ -72,15 +72,15 @@ class HomeController extends Controller
         else{
             $relawan->file_cv = 'null.pdf';
         }
-        $relawan->email     = $request->input('email');
-        $relawan->password = bcrypt($request->input('password'));
-        $relawan->nama_lengkap = $request->input('nama_lengkap');
-        $relawan->alamat = $request->input('alamat');
-        $relawan->tempat_lahir = $request->input('tempat_lahir');
+        $relawan->email         = $request->input('email');
+        $relawan->password      = bcrypt($request->input('password'));
+        $relawan->nama_lengkap  = $request->input('nama_lengkap');
+        $relawan->alamat        = $request->input('alamat');
+        $relawan->tempat_lahir  = $request->input('tempat_lahir');
 
         $relawan->tanggal_lahir = $request->input('tgl_lahir');
-        $relawan->waktu_masuk = $request->input('tgl_masuk');
-        $relawan->no_hp = $request->input('no_hp');
+        $relawan->waktu_masuk   = $request->input('tgl_masuk');
+        $relawan->no_hp          = $request->input('no_hp');
         $relawan->id_line = $request->input('id_line');
         $relawan->role = $request->input('peran');
 

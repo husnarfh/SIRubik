@@ -14,24 +14,45 @@ class InfoJadwal extends Controller
 {
 
     public function get_self(Request $request){
-        // select jadwal where id == $id
         $user = Auth::user();
         $id = $user->id; 
-        Jadwal::where('id');
+        $data = Jadwal::where('id_relawan', $id)
+        ->where('waktu', '>=', date('Y-m-d H:i:s') )
+        ->orderBy('waktu', 'desc')
+        ->get();
+        return response()->json($data);
+
     }
 
 
     public function get_all(Request $request){
-    // select all jadwal
-        $user = Auth::user();
-        $id = $user->id; 
-        // Jadwal::where('1',);
+        $req = json_decode($request->getContent());
+        $data = Jadwal::leftJoin('relawans', 'jadwals.id_relawan', '=', 'relawans.id')
+        ->select(
+            'id_jadwal',
+            'mata_pelajaran',
+            'id_relawan',
+            'nama_lengkap', 
+            'deskripsi',
+            'waktu'
+        )
+        ->where('waktu', '>=', date('Y-m-d H:i:s') )
+        ->orderBy('waktu', 'desc')
+        ->get()
+        ;
+        return response()->json($data);
     }
 
     public function get_other(Request $request){
-        // select jadwal where id = 
-        $id = $request(); 
-        Jadwal::where('id');
+        $req = json_decode($request->getContent());
+        $id = $req->id; 
+        $data = Jadwal::leftJoin('relawans', 'jadwals.id_relawan', '=', 'relawans.id')
+        ->where('id_relawan', $id)
+        ->where('waktu', '>=', date('Y-m-d H:i:s') )
+        ->orderBy('waktu', 'desc')
+        ->get();
+        return response()->json($data);
+
     }
 
 }

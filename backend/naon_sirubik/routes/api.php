@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     
     Route::post('materishow', 'API\MateriController@get');
     Route::post('materiupload', 'API\MateriController@upload');
+    Route::post('materidelete', 'API\MateriController@delete');
 
 
     // chat
