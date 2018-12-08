@@ -10,7 +10,7 @@
 @section('title', 'Input Data Relawan')
 
 @section('content_header')
-    <h1>Input Data Relawan</h1>
+    <h1>Data Calon Relawan</h1>
 @stop
 
 @section('content')

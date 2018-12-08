@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'title' => 'SIRubik',
+    'title'         =>  'SIRubik',
 
-    'title_prefix' => '',
+    'title_prefix'  =>  '',
 
-    'title_postfix' => '',
+    'title_postfix' =>  '',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>SI</b>Rubik',
+    'logo'      =>  '<b>SI</b>Rubik',
 
-    'logo_mini' => '<b>SI</b>',
+    'logo_mini' =>  '<b>SI</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'red-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,43 +108,98 @@ return [
     */
 
     'menu' => [
-        'Relawan',
+        'Manajemen Relawan',
         [
-            'text'        => 'Informasi',
-            'url'         => 'admin/relawan',
-            'icon'        => 'user',
+            'text'      =>      'Relawan Terdaftar',
+            'icon'      =>      'graduation-cap',
+            'submenu'   =>
+            [
+                [
+                    'text'      =>      'Indeks Relawan Terdaftar',
+                    'url'       =>      'admin/relawan',
+                    'icon'      =>      'user',
+                ],
+                [
+                    'text'      =>      'Kalender Pengajaran',
+                    'url'       =>      'admin/relawan',
+                    'icon'      =>      'calendar',
+                ],
+                [
+                    'text'      =>      'Tambah Relawan Baru',
+                    'url'       =>      'admin/relawan/form',
+                    'icon'      =>      'pencil-square-o',
+                ],
+            ],
+        ],
+        [
+            'text'      =>      'Penerimaan Calon Relawan',
+            'url'       =>      'admin/relawan',
+            'icon'      =>      'group',
+        ],
+
+        'Materi Pelajaran',
+        [
+            'text'      =>      'Indeks Materi Pelajaran',
+            'icon'      =>      'book',
+            'submenu'   =>
+            [
+                [
+                    'text'      =>      'Kelas 1',
+                    'url'       =>      'admin/matpel',
+                ],
+                [
+                    'text'      =>      'Kelas 2',
+                    'url'       =>      'admin/matpel',
+                ],
+                [
+                    'text'      =>      'Kelas 3',
+                    'url'       =>      'admin/matpel',
+                ],
+                [
+                    'text'      =>      'Kelas 4',
+                    'url'       =>      'admin/matpel',
+                ],
+                [
+                    'text'      =>      'Kelas 5',
+                    'url'       =>      'admin/matpel',
+                ],
+                [
+                    'text'      =>      'Kelas 6',
+                    'url'       =>      'admin/matpel',
+                ],
+            ],
+        ],
+
+        [
+            'text'  =>  'Tambah Materi Pelajaran Baru',
+            'url'   =>  'admin/matpel/form',
+            'icon'  =>  'pencil-square-o',
         ],
         
+        'Lainnya',
         [
-            'text'        => 'Input',
-            'url'         => 'admin/relawan/form',
-            'icon'        => 'user',
-        ],
-
-
-        'Mata Pelajaran',
-        [
-            'text' => 'Informasi',
-            'url'  => 'admin/matpel',
-            'icon' => 'file',
-        ],
-        [
-            'text' => 'Input',
-            'url'  => 'admin/matpel/form',
-            'icon' => 'file',
-        ],
-        
-        'Event',
-
-        [
-            'text' => 'Informasi',
-            'url'  => 'admin/event',
-            'icon' => 'file',
-        ],
-        [
-            'text' => 'Input',
+            'text' => 'Tentang Sistem',
             'url'  => 'admin/event/form',
-            'icon' => 'file',
+            'icon' => 'institution',
+        ],
+        [
+            'text' => 'Bantuan',
+            'icon' => 'book',
+            'submenu'   =>
+            [
+                [
+                    'text'      =>      'Panduan Penggunaan',
+                    'url'       =>      'admin/matpel',
+                ],
+                [
+                    'text'      =>      'FAQ',
+                    'url'       =>      'admin/matpel',
+                ],
+                [
+                    'text'      =>      'Hubungi Pengembang',
+                    'url'       =>      'admin/matpel',
+                ],
+            ],
         ],
     ],   
     /*
