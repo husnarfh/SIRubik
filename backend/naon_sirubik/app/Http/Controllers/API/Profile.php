@@ -72,12 +72,6 @@ class Profile extends Controller
 
     // still not work. ga tau kenapa
     public function edit_password(Request $request){
-        // {"old_password":"admina", "new_password":"admina"}
-        // $validator = validator::make($request->all(), [
-        //     'password' => 'required',
-        //     'old_password' => 'required',
-        // ]);
-        
 
         $req = json_decode($request->getContent());
         $old = $req->old_password; 
@@ -87,7 +81,6 @@ class Profile extends Controller
         $id = $user->id; 
         $rel = Relawan::where('id', $id)->first();
         $status = 200;
-        // dd([$rel->password, bcrypt($old), $old]);
         if($rel->password == $old){
             $messages = "Password lama tidak sesuai";
             $status = 404;    

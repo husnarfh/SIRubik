@@ -32,20 +32,6 @@ class CreateTable extends Migration
         });
 
 
-        Schema::create('mata_pelajaran', function (Blueprint $table) {
-            $table->increments('id_mata_pelajaran');
-            $table->string('mata_pelajaran');
-            $table->timestamps();
-        });
-        
-        Schema::create('materi', function (Blueprint $table) {
-            $table->increments('id_materi');
-            $table->string('deskripsi');
-            $table->string('id_mata_pelajaran');
-            $table->string('file_materi');
-            $table->timestamps();
-        });
-
         Schema::create('pesan', function (Blueprint $table) {
             $table->increments('id_pesan');
             $table->string('signature');
