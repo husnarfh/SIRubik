@@ -51,7 +51,15 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Untuk Tingkatan</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="SD Kelas 1">
+                  <select class="form-control select2" style="width: 100%;">
+                    <option selected="selected">SD Kelas 1</option>
+                    <option>SD Kelas 1</option>
+                    <option>SD Kelas 2</option>
+                    <option>SD Kelas 3</option>
+                    <option>SD Kelas 4</option>
+                    <option>SD Kelas 5</option>
+                    <option>SD Kelas 6</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama Materi</label>
@@ -61,18 +69,13 @@
                   <label for="exampleInputFile">File input</label>
                   <input type="file" id="exampleInputFile">
 
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
+                  <p class="help-block">Ukuran file tidak boleh melebihi 1 GB.</p>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Upload</button>
               </div>
             </form>
           </div>
