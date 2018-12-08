@@ -28,6 +28,10 @@ class jadwal2seed extends Seeder
                                 'tempat' => 'bogor',
                                 'deskripsi' => 'lorem ipsum',
                                 'waktu' => '1998-1-'.strval($tgl).' 1:1:1',                                
+
+                                'created_at' => date('Y-m-d H:i:s'),
+                                'updated_at' => date('Y-m-d H:i:s')
+
                             ]
                         ]
                     );
