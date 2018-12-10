@@ -32,7 +32,7 @@
    h. tanggal_lahir (date)
    i. tanggal_masuk (date) 
    j. no_hp (string)
-   k. file_cv (string)
+   k. file_cv (string)t
    l. role (string)
    m. alasan_masuk (string)
    o. id_line (string)
@@ -76,7 +76,7 @@ Mata pelajaran deleted karena data nya dikit. Untuk pengembangan lanjutan dapat 
    1. Calon relawan register via apps. akan dilakukan seleksi. Jika diterima calon akan menjadi relawan dan dapat melakukan login pada sistem
 
 5. Workflow teknis
-   2. Saat login. User akan melakukan post json, admin dan password. Diverifikasi oleh aut
+   1. Saat login. User akan melakukan post json, admin dan password. Diverifikasi oleh auth
 
 6. Mobile API Need List
    1. Authentication. Kerjaannya nerima input json admin&password. Abis itu ngereturn token jwt. Masih dipelajari
@@ -91,4 +91,5 @@ Mata pelajaran deleted karena data nya dikit. Untuk pengembangan lanjutan dapat 
    10. Pesan. Belum terfikirkan
 
 7. Android API Need List
-   11. Notification Jadwal. Kemungkinan workflownya itu dia ngecache jadwal. lalu siap siap buat munculin notifikasi
+   1. Notification Jadwal. Kemungkinan workflownya itu dia ngecache jadwal. lalu siap siap buat munculin notifikasi
+   2. 
