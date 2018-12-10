@@ -85,8 +85,8 @@ class Profile extends Controller
         );        
         return json_encode($data);
     }
+    // still not work. ga tau kenapa    
 
-    // still not work. ga tau kenapa
     public function edit_password(Request $request){
 
         $req = json_decode($request->getContent());
