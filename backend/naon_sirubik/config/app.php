@@ -164,7 +164,7 @@ return [
         // Tymon\JWTAuth\Providers\LaravelServiceProvider::class
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
-
+        Barryvdh\Cors\ServiceProvider::class,
         
     ],
 

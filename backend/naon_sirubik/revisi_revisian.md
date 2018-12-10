@@ -43,6 +43,7 @@
 
 4. Jadwal.
    a. id_jadwal (integer)
+   b. id_relawan (string)
    b. mata_pelajaran (string)
    c. tempat (string)
    d. waktu (time)
