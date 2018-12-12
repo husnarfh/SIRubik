@@ -13,7 +13,7 @@ Route::post('login', 'API\RelAuthentication@login');
 // Route::post('register', 'API\RelAuthentication@register');
 Route::group(['middleware' => 'auth:api'], function(){  
     
-    Route::post('logout', 'API\RelAuthentication@logout');
+    Route::get('logout', 'API\RelAuthentication@logout');
 
     // Route::post('details', 'API\RelAuthentication@details');
 
@@ -23,11 +23,13 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('infojadwallain', 'API\InfoJadwal@get_other');
 
     // info 
-    Route::post('profileall', 'API\Profile@get_all');
+    Route::get('profileall', 'API\Profile@get_all');
     Route::post('profileorang', 'API\Profile@get_other');
     Route::post('profileedit', 'API\Profile@edit_profile');
-    Route::post('profilesendiri', 'API\Profile@get_self');
+    Route::get('profilesendiri', 'API\Profile@get_self');
 
+    Route::post('uploadimage', 'API\Profile@photo_uploader');
+    
 
     // belom
     Route::post('editpassword', 'API\Profile@edit_password');
@@ -37,6 +39,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     
     Route::post('materishow', 'API\MateriController@get');
     Route::post('materiupload', 'API\MateriController@upload');
+    Route::post('uploadfile', 'API\MateriController@uploadfile');
     Route::post('materidelete', 'API\MateriController@delete');
 
 

@@ -26,7 +26,7 @@ class materiseed extends Seeder
                             'kelas' => $kelas,
                             'deskripsi' => 'lorem ipsum',
                             'file_materi' => 'hehe.pdf',
-                
+                            'nama_materi' => "Bab 11 lorem ipsum",
                             'created_at' => date('Y-m-d H:i:s'),
                             'updated_at' => date('Y-m-d H:i:s')        
                         ]

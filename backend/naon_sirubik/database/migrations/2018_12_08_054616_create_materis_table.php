@@ -18,6 +18,7 @@ class CreateMaterisTable extends Migration
             $table->string('id_uploader');
             $table->string('mata_pelajaran');
             $table->string('kelas');
+            $table->string('nama_materi'); 
             $table->string('file_materi');
             $table->string('deskripsi');
             $table->timestamps();

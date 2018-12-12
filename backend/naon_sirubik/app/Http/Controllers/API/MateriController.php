@@ -24,6 +24,7 @@ class MateriController extends Controller
             'materis.id',
             'materis.kelas',
             'materis.deskripsi',
+            'materis.judul',
             'materis.file_materi',
             'relawans.id',
             'relawans.nama_lengkap'
@@ -31,8 +32,30 @@ class MateriController extends Controller
         ->orderBy('kelas', 'asc')
         ->get()
         ;
-        return response()->json($data);
+        $hasil["hasil"]   = $data;     
+        return $hasil;
+    
+    }
 
+
+    public function uploadfile(Request $request){
+      $file = $request->file('materi');
+   
+      //Display File Name
+      $allowed = "pdf,docx,md,zip,rar,doc,xls,xlsx,ppt,pptx";
+      $file_extension  = $file->getClientOriginalExtension();
+      $allow = explode(',', $allowed);
+         
+      if(!in_array($file_extension,$allow )){
+        return '{"error":"fail dilarang"}';
+      }
+
+      //Move Uploaded File
+      $destinationPath = 'materi';
+      $nama_file = $file->getClientOriginalName();
+      $file->move($destinationPath,$file->getClientOriginalName());
+      return '{"nama_file":'."$nama_file".'}';
+   
     }
 
     public function upload(Request $request){
@@ -65,14 +88,26 @@ class MateriController extends Controller
         $query = Materi::where('id', '=',$req->id_materi)
         ->where('id_uploader', '=', Auth::User()->id)
         ->delete();
-
-        $data = array(
+        if($query){
+            $data = array(
                  'message'      => "File berhasil dihapus",
                  'status'       => $status
-        );
+            );
         
-        return json_encode($data); 
+           return json_encode($data); 
+            
+        }
+        else{
+            $data = array(
+                 'message'      => "File gagal dihapus",
+                 'status'       => 401
+            );
+        
+           return json_encode($data); 
+         
 
+        }
+        
     }
     
 

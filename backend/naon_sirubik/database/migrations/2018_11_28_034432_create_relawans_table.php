@@ -19,7 +19,7 @@ class CreateRelawansTable extends Migration
             $table->string('password');
             $table->string('nama_lengkap');
             $table->string('alamat');
-            $table->string('image');
+            $table->longText('image');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->date('waktu_masuk');

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use Illuminate\Support\Facades\Hash;
 
+
 class Profile extends Controller
 {
     public function get_self(Request $request){
@@ -29,8 +30,9 @@ class Profile extends Controller
                             'no_hp', 
                             'id_line', 
                             'role']);
-        
-        return response()->json($data);
+        // $hasil["hasil"]   = response()->json($data);     
+        $hasil["hasil"]   = $data;     
+        return $hasil;
     }
 
     public function get_other(Request $request){
@@ -38,7 +40,9 @@ class Profile extends Controller
         $id = $req->id; 
         $rel = Relawan::where('id', $id);
         $data = $rel->get(['nama_lengkap', 'image', 'waktu_masuk', 'no_hp', 'id_line', 'role']);
-        return response()->json($data);
+        $hasil["hasil"]   = $data;     
+        return $hasil;
+        
     }
 
     public function get_all(Request $request){
@@ -46,7 +50,21 @@ class Profile extends Controller
             ['email', 'nama_lengkap', 'alamat',
              'image', 'tempat_lahir', 'tanggal_lahir',
              'waktu_masuk', 'no_hp', 'id_line', 'role']);
-        return response()->json($data);
+        $hasil["hasil"]   = $data;     
+        return $hasil;
+    }
+
+    public function photo_uploader(Request $request){
+        // 
+        $req = json_decode($request->getContent());
+        $user = Auth::user();
+        $id = $user->id; 
+        $rel = Relawan::where('id', $id)->first();
+        $rel->image = $req->image;
+        $rel->save();
+        $hasil["hasil"]   = "File uploaded";     
+        return $hasil;
+    
     }
 
     public function edit_profile(Request $request){

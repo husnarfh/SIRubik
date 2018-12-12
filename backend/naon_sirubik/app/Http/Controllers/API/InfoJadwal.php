@@ -20,7 +20,9 @@ class InfoJadwal extends Controller
         ->where('waktu', '>=', date('Y-m-d H:i:s') )
         ->orderBy('waktu', 'desc')
         ->get();
-        return response()->json($data);
+
+        $hasil["hasil"]   = $data;     
+        return $hasil;
 
     }
 
@@ -40,7 +42,10 @@ class InfoJadwal extends Controller
         ->orderBy('waktu', 'desc')
         ->get()
         ;
-        return response()->json($data);
+        $hasil["hasil"]   = $data;     
+        return $hasil;
+
+
     }
 
     public function get_other(Request $request){
@@ -51,8 +56,10 @@ class InfoJadwal extends Controller
         ->where('waktu', '>=', date('Y-m-d H:i:s') )
         ->orderBy('waktu', 'desc')
         ->get();
-        return response()->json($data);
+        $hasil["hasil"]   = $data;     
+        return $hasil;
 
     }
 
 }
+    
