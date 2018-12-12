@@ -79,7 +79,7 @@
                 <td>Ahmad SyauqiBot1</td>
                 <td>1</td>
                 <td>bot1@contoh.com</td>
-                <td>paragraf gede disiniparagraf gede disiniparagraf gede disini</td>
+                <td>teks singkat</td>
                 <td>paragraf gede disiniparagraf gede disiniparagraf gede disini</td>
                 <td>teks singkat</td>
                 <td>dd/yy/mm</td>
@@ -103,7 +103,7 @@
                   <td>Ahmad SyauqiBot2</td>
                   <td>2</td>
                   <td>bot2@contoh.com</td>
-                  <td>paragraf gede disiniparagraf gede disiniparagraf gede disini</td>
+                  <td>teks singkat</td>
                   <td>paragraf gede disiniparagraf gede disiniparagraf gede disini</td>
                   <td>teks singkat</td>
                   <td>dd/yy/mm</td>
@@ -121,6 +121,7 @@
                     </div>
                   </td>
               </tr>
+          
           </tbody>
 
           <tfoot>
@@ -141,6 +142,7 @@
           </tr>
           </tfoot>
         </tbody>
+        
   </div>
   <!-- /.tab-pane -->
   </div>
