@@ -26,6 +26,7 @@ class MateriController extends Controller
             'materis.deskripsi',
             'materis.judul',
             'materis.file_materi',
+            'materis.mata_pelajaran',
             'relawans.id',
             'relawans.nama_lengkap'
         )
@@ -37,6 +38,29 @@ class MateriController extends Controller
     
     }
 
+    public function getkelasmapel(Request $request){
+        // {"kelas":"1", "mata_pelajaran":"bahasa_inggris"}
+        $req = json_decode($request->getContent());
+        $data = Materi::leftjoin('relawans', 'materis.id_uploader', '=', 'relawans.id')
+        ->select(
+            'materis.id',
+            'materis.kelas',
+            'materis.deskripsi',
+            'materis.judul',
+            'materis.file_materi',
+            'materis.mata_pelajaran',
+            'relawans.id',
+            'relawans.nama_lengkap'
+        )
+        ->where("mata_pelajaran", $req->mata_pelajaran)
+        ->where("kelas", $req->kelas)
+        ->orderBy('kelas', 'asc')
+        ->get()
+        ;
+        $hasil["hasil"]   = $data;     
+        return $hasil;
+        
+    }
 
     public function uploadfile(Request $request){
       $file = $request->file('materi');
@@ -63,6 +87,7 @@ class MateriController extends Controller
         $materi = new Materi;
     
         // $name = Storage::disk('local')->put('file_materi', $request->file_materi);
+        // 
         $name = "";
         $status = 200;
         foreach ($req as $key => $value) {

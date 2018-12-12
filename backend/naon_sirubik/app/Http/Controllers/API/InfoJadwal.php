@@ -18,7 +18,7 @@ class InfoJadwal extends Controller
         $id = $user->id; 
         $data = Jadwal::where('id_relawan', $id)
         ->where('waktu', '>=', date('Y-m-d H:i:s') )
-        ->orderBy('waktu', 'desc')
+        ->orderBy('waktu', 'asc')
         ->get();
 
         $hasil["hasil"]   = $data;     

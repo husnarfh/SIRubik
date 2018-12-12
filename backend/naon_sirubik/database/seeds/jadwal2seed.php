@@ -16,10 +16,10 @@ class jadwal2seed extends Seeder
             $relawan = 3;
             
 
-            foreach ($mapel as $mp) {
-                $tgl = 7;
-                for ($i=0; $i < $relawan; $i++) { 
-                    
+            for ($i=0; $i < $relawan; $i++) { 
+                
+                $tgl = 14;
+                    foreach ($mapel as $mp) {            
                     Jadwal::Insert(
                         [
                             [
@@ -27,7 +27,7 @@ class jadwal2seed extends Seeder
                                 'id_relawan'=>strval($i),
                                 'tempat' => 'bogor',
                                 'deskripsi' => 'lorem ipsum',
-                                'waktu' => '1998-1-'.strval($tgl).' 1:1:1',                                
+                                'waktu' => '2018-12-'.strval($tgl).' 1:1:1',                                
 
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s')

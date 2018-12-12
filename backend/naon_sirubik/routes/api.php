@@ -18,8 +18,8 @@ Route::group(['middleware' => 'auth:api'], function(){
     // Route::post('details', 'API\RelAuthentication@details');
 
     // info jadwal
-    Route::post('infojadwal', 'API\InfoJadwal@get_all');
-    Route::post('infojadwalsendiri', 'API\InfoJadwal@get_self');
+    Route::get('infojadwal', 'API\InfoJadwal@get_all');
+    Route::get('infojadwalsendiri', 'API\InfoJadwal@get_self');
     Route::post('infojadwallain', 'API\InfoJadwal@get_other');
 
     // info 
