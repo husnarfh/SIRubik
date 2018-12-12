@@ -38,6 +38,11 @@ class HomeController extends Controller
         return view('admin.input_relawan');
     }
 
+    public function indeks_relawan()
+    {
+        return view('admin.indeks_relawan');
+    }
+
     public function add_relawan(Request $request)
     {
         // dd($request);
@@ -87,5 +92,4 @@ class HomeController extends Controller
         $relawan->save();
         return redirect('/admin/')->with('info','Book Saved Successfully!');
     }
-
 }

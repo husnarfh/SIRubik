@@ -116,12 +116,12 @@ return [
             [
                 [
                     'text'      =>      'Indeks Relawan Terdaftar',
-                    'url'       =>      'admin/relawan',
+                    'url'       =>      'admin/relawan/indeks',
                     'icon'      =>      'user',
                 ],
                 [
                     'text'      =>      'Kalender Pengajaran',
-                    'url'       =>      'admin/relawan',
+                    'url'       =>      'admin/relawan/kalender',
                     'icon'      =>      'calendar',
                 ],
                 [

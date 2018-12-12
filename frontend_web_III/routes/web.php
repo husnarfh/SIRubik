@@ -20,8 +20,7 @@ Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 
 // admin functionality
-Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/relawan', 'HomeController@index')->name('home');
+Route::get('/admin/relawan/indeks', 'HomeController@indeks_relawan')->name('indeks_relawan');
 Route::get('/admin/relawan/form', 'HomeController@input_relawan')->name('home');
 Route::post('/admin/inputrelawan', 'HomeController@add_relawan')->name('home');
 
