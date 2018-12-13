@@ -88,7 +88,6 @@
                 <td>+62XXXXXX</td>
                 <td>darkboyoki</td>
                 <td>
-                  <div class="box-footer">
                   <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
                   <br><br>
                   <a href="#"><button type="submit" class="btn btn-primary">Atur Jadwal</button></a>
@@ -96,7 +95,6 @@
                   <form action="#" method="post">
                   <button type="submit" class="btn btn-danger">Hapus Keanggotaan</button>
                   </form>
-                 </div>
                 </td>
               </tr>
               <tr>
@@ -113,15 +111,13 @@
                   <td>+62XXXXXX</td>
                   <td>darkboyoki</td>
                   <td>
-                    <div class="box-footer">
-                      <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
-                      <br><br>
-                      <a href="#"><button type="submit" class="btn btn-primary">Atur Jadwal</button></a>
-                      <br><br>
-                      <form action="#" method="post">
-                        <button type="submit" class="btn btn-danger">Hapus Keanggotaan</button>
-                      </form>
-                     </div>
+                    <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
+                    <br><br>
+                    <a href="#"><button type="submit" class="btn btn-primary">Atur Jadwal</button></a>
+                    <br><br>
+                    <form action="#" method="post">
+                      <button type="submit" class="btn btn-danger">Hapus Keanggotaan</button>
+                    </form>
                   </td>
                 </tr>
               </tbody>
