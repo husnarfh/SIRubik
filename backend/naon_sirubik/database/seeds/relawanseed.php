@@ -51,7 +51,7 @@ class relawanseed extends Seeder
                 'no_hp' => "08123456789",
                 'file_cv' => "dummy_cv.pdf",
                 'role' => "knight",
-                'id_line' => "res23tri",
+                'id_line' => "alfan",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],

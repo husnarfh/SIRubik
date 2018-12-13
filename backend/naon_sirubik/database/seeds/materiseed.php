@@ -12,7 +12,7 @@ class materiseed extends Seeder
      */
     public function run()
     {
-        $mapel = ['matematika', 'bahasa_inggris', 'ipa', 'ips'];
+        $mapel = ['Matematika', 'Bahasa Inggris', 'IPA', 'IPS'];
         
         for ($kelas=1; $kelas <= 6; $kelas++) { 
             foreach ($mapel as $mp) {

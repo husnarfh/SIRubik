@@ -1,4 +1,4 @@
-<?php
+    <?php
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     // materi
     
     Route::post('materishow', 'API\MateriController@get');
+    Route::post('materishowselect', 'API\MateriController@getkelasmapel');
     Route::post('materiupload', 'API\MateriController@upload');
     Route::post('uploadfile', 'API\MateriController@uploadfile');
     Route::post('materidelete', 'API\MateriController@delete');
