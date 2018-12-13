@@ -22,6 +22,7 @@ Route::get('/', 'HomeController@index')->name('home');
 // admin functionality
 Route::get('/admin/relawan/indeks', 'HomeController@indeks_relawan')->name('indeks_relawan');
 Route::get('/admin/relawan/form', 'HomeController@input_relawan')->name('home');
+Route::get('/admin/relawan/kalender', 'HomeController@kalender_pengajaran')->name('kalender_pengajaran');
 Route::post('/admin/inputrelawan', 'HomeController@add_relawan')->name('home');
 
 Route::get('/admin', 'HomeController@index')->name('home');

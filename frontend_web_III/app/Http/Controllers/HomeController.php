@@ -30,12 +30,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        return view('admin.indeks_relawan');
     }
 
     public function input_relawan()
     {
         return view('admin.input_relawan');
+    }
+    
+    public function kalender_pengajaran()
+    {
+        return view('admin.kalender_pengajaran');
     }
 
     public function indeks_relawan()

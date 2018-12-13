@@ -7,10 +7,10 @@
 @push('js')
 @push('css') 
 
-@section('title', 'Input Data Relawan')
+@section('title', 'Indeks Relawan Terdaftar')
 
 @section('content_header')
-    <h1>Indeks Data Relawan</h1>
+    <h1>Indeks Relawan Terdaftar</h1>
 @stop
 
 @section('content')
@@ -87,14 +87,15 @@
                 <td>+62XXXXXX</td>
                 <td>darkboyoki</td>
                 <td>
-                    <div class="box-footer">
-                        <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
-                    <br>
-                    <br>
-                    <form action="#" method="post">{{csrf_field()}}
-                      <button type="submit" class="btn btn-danger">Hapus Keanggotaan</button>
-                    </form>
-                  </div>
+                  <div class="box-footer">
+                  <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
+                  <br><br>
+                  <a href="#"><button type="submit" class="btn btn-primary">Atur Jadwal</button></a>
+                  <br><br>
+                  <form action="#" method="post">
+                  <button type="submit" class="btn btn-danger">Hapus Keanggotaan</button>
+                  </form>
+                 </div>
                 </td>
               </tr>
               <tr>
@@ -111,20 +112,19 @@
                   <td>+62XXXXXX</td>
                   <td>darkboyoki</td>
                   <td>
-                      <div class="box-footer">
-                          <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
-                      <br>
-                      <br>
+                    <div class="box-footer">
+                      <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
+                      <br><br>
+                      <a href="#"><button type="submit" class="btn btn-primary">Atur Jadwal</button></a>
+                      <br><br>
                       <form action="#" method="post">
                         <button type="submit" class="btn btn-danger">Hapus Keanggotaan</button>
                       </form>
-                    </div>
+                     </div>
                   </td>
-              </tr>
-          
-          </tbody>
-
-          <tfoot>
+                </tr>
+              </tbody>
+              <tfoot>
           <tr>
             <th>Nomor</th>
             <th>Foto</th>
