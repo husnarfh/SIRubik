@@ -27,8 +27,10 @@ Route::get('/admin/relawan/calon', 'HomeController@calon_relawan')->name('calon_
 Route::post('/admin/inputrelawan', 'HomeController@add_relawan')->name('home');
 
 Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/matpel/kelas1', 'HomeController@index')->name('home');
-Route::get('/admin/matpel/form', 'HomeController@index')->name('home');
+
+Route::get('/admin/matpel/kelas1', 'HomeController@kelas1')->name('home');
+
+Route::get('/admin/matpel/form', 'HomeController@matpel_form')->name('matpel_form');
 
 Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/admin/event', 'HomeController@index')->name('home');

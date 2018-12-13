@@ -53,6 +53,16 @@ class HomeController extends Controller
         return view('admin.indeks_relawan');
     }
 
+    public function kelas1()
+    {
+        return view('admin.kelas1');
+    }
+
+    public function matpel_form()
+    {
+        return view('admin.matpel_form');
+    }
+
     public function add_relawan(Request $request)
     {
         // dd($request);
