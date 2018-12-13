@@ -43,6 +43,11 @@ class HomeController extends Controller
         return view('admin.kalender_pengajaran');
     }
 
+    public function calon_relawan()
+    {
+        return view('admin.calon_relawan');
+    }
+
     public function indeks_relawan()
     {
         return view('admin.indeks_relawan');

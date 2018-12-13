@@ -133,7 +133,7 @@ return [
         ],
         [
             'text'      =>      'Penerimaan Calon Relawan',
-            'url'       =>      'admin/relawan',
+            'url'       =>      'admin/relawan/calon',
             'icon'      =>      'group',
         ],
 
@@ -145,27 +145,27 @@ return [
             [
                 [
                     'text'      =>      'Kelas 1',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/matpel/kelas1',
                 ],
                 [
                     'text'      =>      'Kelas 2',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/matpel/kelas2',
                 ],
                 [
                     'text'      =>      'Kelas 3',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/matpel/kelas3',
                 ],
                 [
                     'text'      =>      'Kelas 4',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/matpel/kelas4',
                 ],
                 [
                     'text'      =>      'Kelas 5',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/matpel/kelas5',
                 ],
                 [
                     'text'      =>      'Kelas 6',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/matpel/kelas6',
                 ],
             ],
         ],
