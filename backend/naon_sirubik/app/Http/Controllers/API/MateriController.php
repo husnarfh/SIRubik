@@ -18,20 +18,25 @@ class MateriController extends Controller
     
     public function get(Request $request){
         $req = json_decode($request->getContent());
-        // $data = Materi::orderBy('kelas', 'asc')->get();
+// $data = Materi::orderBy('kelas', 'asc')->get();
+// {
+// "mata_pelajaran":"Matematika",
+// "kelas":1
+// }
         $data = Materi::leftjoin('relawans', 'materis.id_uploader', '=', 'relawans.id')
         ->select(
             'materis.id',
             'materis.kelas',
             'materis.deskripsi',
-            'materis.judul',
+            'materis.nama_materi',
             'materis.file_materi',
             'materis.mata_pelajaran',
-            'relawans.id',
+            'relawans.id as idrelawan',
             'relawans.nama_lengkap'
         )
         ->orderBy('kelas', 'asc')
         ->get()
+        
         ;
         $hasil["hasil"]   = $data;     
         return $hasil;
@@ -46,10 +51,10 @@ class MateriController extends Controller
             'materis.id',
             'materis.kelas',
             'materis.deskripsi',
-            'materis.judul',
+            'materis.nama_materi',
             'materis.file_materi',
             'materis.mata_pelajaran',
-            'relawans.id',
+            'relawans.id as id_relawan',
             'relawans.nama_lengkap'
         )
         ->where("mata_pelajaran", $req->mata_pelajaran)
@@ -83,6 +88,13 @@ class MateriController extends Controller
     }
 
     public function upload(Request $request){
+        
+//  {
+// 	"mata_pelajaran":"Matematika",
+// 	"kelas":2,
+// 	"nama_materi":"Aljabar Linear",
+// 	"deskripsi":"lorem ipsum"
+// }       
         $req = json_decode($request->getContent());
         $materi = new Materi;
     
@@ -90,13 +102,21 @@ class MateriController extends Controller
         // 
         $name = "";
         $status = 200;
-        foreach ($req as $key => $value) {
-            $materi->$key = $req->$key;
-        }
-
-        $materi->file_materi = $name; 
+        // foreach ($req as $key => $value) {
+        //     $materi->$key = $req->$key;
+        // }
+        
+        $materi->file_materi = "hehe.pdf"; 
+        $materi->kelas = $req->kelas; 
+        $materi->mata_pelajaran = $req->mata_pelajaran; 
+        $materi->deskripsi = $req->deskripsi; 
+        $materi->nama_materi = $req->nama_materi; 
+        $materi->kelas = $req->kelas; 
+        $materi->id_uploader = Auth::user()->id; 
         $materi->save();
         
+
+
         $data = array(
                  'message'      => "Materi berhasil ditambahkan",
                  'status'       => $status

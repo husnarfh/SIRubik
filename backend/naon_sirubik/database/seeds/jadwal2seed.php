@@ -12,7 +12,7 @@ class jadwal2seed extends Seeder
      */
     public function run()
     {  
-            $mapel = ['matematika', 'bahasa_inggris', 'ipa', 'ips'];
+            $mapel = ['Matematika', 'Bahasa Inggris', 'IPA', 'IPS'];
             $relawan = 3;
             
 
@@ -28,7 +28,7 @@ class jadwal2seed extends Seeder
                                 'tempat' => 'bogor',
                                 'deskripsi' => 'lorem ipsum',
                                 'waktu' => '2018-12-'.strval($tgl).' 1:1:1',                                
-
+                                'kelas' => rand(1, 6),
                                 'created_at' => date('Y-m-d H:i:s'),
                                 'updated_at' => date('Y-m-d H:i:s')
 
