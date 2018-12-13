@@ -11,6 +11,7 @@
 @section('content')
 <div class="tab-content">
   <div class="tab-pane active" id="semester_1">
+      <div class="box box-primary">
         <table id="tabel_semester_1" class="table table-bordered table-striped">
           <thead>
           <tr>
@@ -66,7 +67,6 @@
                 <td>1</td>
                 <td>paragraf singkatparagraf singkatparagraf singkat</td>
                 <td>
-                  <div class="box-footer">
                   <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
                   <br><br>
                   <a href="#"><button type="submit" class="btn btn-success">Terima Pengajar</button></a>
@@ -74,7 +74,6 @@
                   <form action="#" method="post">
                   <button type="submit" class="btn btn-danger">Tolak Pengajar</button>
                   </form>
-                 </div>
                 </td>
               </tr>
               <tr>
@@ -83,7 +82,6 @@
                   <td>2</td>
                   <td>paragraf singkatparagraf singkatparagraf singkat</td>
                   <td>
-                      <div class="box-footer">
                       <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
                       <br><br>
                       <a href="#"><button type="submit" class="btn btn-success">Terima Pengajar</button></a>
@@ -91,7 +89,6 @@
                       <form action="#" method="post">
                       <button type="submit" class="btn btn-danger">Tolak Pengajar</button>
                       </form>
-                     </div>
                     </td>
                 </tr>
               </tbody>

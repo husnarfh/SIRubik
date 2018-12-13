@@ -16,6 +16,7 @@
 @section('content')
 <div class="tab-content">
   <div class="tab-pane active" id="semester_1">
+      <div class="box box-primary">
         <table id="tabel_semester_1" class="table table-bordered table-striped">
           <thead>
           <tr>
