@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'red-light',
+    'skin' => 'red',
 
     /*
     |--------------------------------------------------------------------------
@@ -179,7 +179,7 @@ return [
         'Lainnya',
         [
             'text' => 'Tentang Sistem',
-            'url'  => 'admin/event/form',
+            'url'  => 'admin/tentang',
             'icon' => 'institution',
         ],
         [
@@ -189,15 +189,15 @@ return [
             [
                 [
                     'text'      =>      'Panduan Penggunaan',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/bantuan',
                 ],
                 [
                     'text'      =>      'FAQ',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/faq',
                 ],
                 [
                     'text'      =>      'Hubungi Pengembang',
-                    'url'       =>      'admin/matpel',
+                    'url'       =>      'admin/kontak',
                 ],
             ],
         ],
