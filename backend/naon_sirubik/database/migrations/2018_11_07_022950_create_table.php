@@ -32,14 +32,16 @@ class CreateTable extends Migration
         });
 
 
-        Schema::create('pesan', function (Blueprint $table) {
-            $table->increments('id_pesan');
-            $table->string('signature');
-            $table->string('id_pengguna_recv');
-            $table->string('id_pengguna_send');
-            $table->string('isi_pesan');
-            $table->timestamps();
-        });
+        // Schema::create('pesan', function (Blueprint $table) {
+        //     $table->increments('id_pesan');
+        //     $table->string('signature');
+        //     $table->string('id_pengguna_recv');
+        //     $table->string('id_pengguna_send');
+        //     $table->string('isi_pesan');
+        //     $table->timestamps();
+        // });
+
+        
 
 
         

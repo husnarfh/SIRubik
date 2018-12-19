@@ -38,8 +38,26 @@ class relawanseed extends Seeder
                 'id_line' => "husnarfh",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
- 
-            ],[
+                
+            ],
+            [
+    			'email'			=> 'res23adi@gmail.com',
+    			'password'		=> bcrypt("admina"),
+                'nama_lengkap' => "restu triadi",
+                'alamat' => "cibanteng",
+                'image' => 'anonimus.jpg',
+                'tempat_lahir' => "tangerang",
+                'tanggal_lahir' => "1998-01-01",
+                'waktu_masuk' => "1998-01-01",
+                'no_hp' => "08123456789",
+                'file_cv' => "dummy_cv.pdf",
+                'role' => "knight",
+                'id_line' => "husnarfh",
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+                
+            ]
+            ,[
     			'email'			=> 'alfakatsuki@gmail.com',
     			'password'		=> bcrypt("admina"),
                 'nama_lengkap' => "alfan",

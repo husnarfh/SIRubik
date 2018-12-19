@@ -45,6 +45,10 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 
     // chat
+    Route::get('dialog', 'API\PesanController@dialog');
+    Route::post('retrieve', 'API\PesanController@retrieve');
+    Route::post('send', 'API\PesanController@send');
+    
 
 });
 

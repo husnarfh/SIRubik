@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
     	$this->call(useradminseed::class);
         $this->call(jadwal2seed::class);
         $this->call(materiseed::class);
+        $this->call(seedpesan::class);
     }
 }
