@@ -37,6 +37,31 @@ class HomeController extends Controller
     {
         return view('admin.input_relawan');
     }
+    
+    public function kalender_pengajaran()
+    {
+        return view('admin.kalender_pengajaran');
+    }
+
+    public function calon_relawan()
+    {
+        return view('admin.calon_relawan');
+    }
+
+    public function indeks_relawan()
+    {
+        return view('admin.indeks_relawan');
+    }
+
+    public function kelas1()
+    {
+        return view('admin.kelas1');
+    }
+
+    public function matpel_form()
+    {
+        return view('admin.matpel_form');
+    }
 
     public function add_relawan(Request $request)
     {
@@ -87,5 +112,4 @@ class HomeController extends Controller
         $relawan->save();
         return redirect('/admin/')->with('info','Book Saved Successfully!');
     }
-
 }

@@ -20,14 +20,17 @@ Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 
 // admin functionality
-Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/relawan', 'HomeController@index')->name('home');
+Route::get('/admin/relawan/indeks', 'HomeController@indeks_relawan')->name('indeks_relawan');
 Route::get('/admin/relawan/form', 'HomeController@input_relawan')->name('home');
+Route::get('/admin/relawan/kalender', 'HomeController@kalender_pengajaran')->name('kalender_pengajaran');
+Route::get('/admin/relawan/calon', 'HomeController@calon_relawan')->name('calon_relawan');
 Route::post('/admin/inputrelawan', 'HomeController@add_relawan')->name('home');
 
 Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/matpel', 'HomeController@index')->name('home');
-Route::get('/admin/matpel/form', 'HomeController@index')->name('home');
+
+Route::get('/admin/matpel/kelas1', 'HomeController@kelas1')->name('home');
+
+Route::get('/admin/matpel/form', 'HomeController@matpel_form')->name('matpel_form');
 
 Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/admin/event', 'HomeController@index')->name('home');
