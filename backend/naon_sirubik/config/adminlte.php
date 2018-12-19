@@ -108,6 +108,12 @@ return [
     */
 
     'menu' => [
+        'Dashboard',
+        [
+            'text'      =>      'Dashboard Admin',
+            'icon'      =>      'pie-chart',
+            'url'       =>      '/',
+        ],
         'Manajemen Relawan',
         [
             'text'      =>      'Relawan Terdaftar',

@@ -14,7 +14,7 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-info">
+        <div class="small-box bg-purple">
             <div class="inner">
                 <h3>777</h3>
                 <p>Relawan Terdaftar</p>
@@ -28,7 +28,7 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-success">
+        <div class="small-box bg-gray">
             <div class="inner">
                 <h3>44</h3>
                 <p>Calon Relawan Baru</p>
