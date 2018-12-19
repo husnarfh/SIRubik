@@ -111,7 +111,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href={{ asset('vendor/adminlte/dist/css/AdminLTE.css') }}>
+<link rel="stylesheet" href={{ asset('vendor/adminlte/dist/css/AdminLTE.css') }}>
 @stop
 
 @section('js')
