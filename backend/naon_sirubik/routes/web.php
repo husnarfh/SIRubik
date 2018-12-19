@@ -28,7 +28,7 @@ Route::post('/admin/inputrelawan', 'HomeController@add_relawan')->name('home');
 
 Route::get('/admin', 'HomeController@index')->name('home');
 
-Route::get('/admin/matpel/kelas1', 'HomeController@kelas1')->name('home');
+Route::get('/admin/matpel', 'HomeController@matpel')->name('home');
 
 Route::get('/admin/matpel/form', 'HomeController@matpel_form')->name('matpel_form');
 

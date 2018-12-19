@@ -1,22 +1,143 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
-
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Kalender Pengajaran')
 
 @section('content_header')
     <h1>Kalender Pengajaran</h1>
 @stop
 
 @section('content')
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href={{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href={{ asset('bower_components/font-awesome/css/font-awesome.min.css')}}>
+  <!-- Ionicons -->
+  <link rel="stylesheet" href={{ asset('bower_components/Ionicons/css/ionicons.min.css')}}>
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href={{ asset('bower_components/fullcalendar/dist/fullcalendar.min.css')}}>
+  <link rel="stylesheet" href={{ asset('bower_components/fullcalendar/dist/fullcalendar.print.min.css')}} media="print">
+  <!-- Theme style -->
+  <link rel="stylesheet" href={{ asset('vendor/adminlte/dist/css/AdminLTE.min.css')}}>
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href={{ asset('vendor/adminlte/dist/css/skins/_all-skins.min.css')}}>
 
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Calendar
+          <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">Calendar</li>
+        </ol>
+      </section>
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box box-solid">
+              <div class="box-header with-border">
+                <h4 class="box-title">Draggable Events</h4>
+              </div>
+              <div class="box-body">
+                <!-- the events -->
+                <div id="external-events">
+                  <div class="external-event bg-green">Lunch</div>
+                  <div class="external-event bg-yellow">Go home</div>
+                  <div class="external-event bg-aqua">Do homework</div>
+                  <div class="external-event bg-light-blue">Work on UI design</div>
+                  <div class="external-event bg-red">Sleep tight</div>
+                  <div class="checkbox">
+                    <label for="drop-remove">
+                      <input type="checkbox" id="drop-remove">
+                      remove after drop
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+            <div class="box box-solid">
+              <div class="box-header with-border">
+                <h3 class="box-title">Create Event</h3>
+              </div>
+              <div class="box-body">
+                <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                  <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
+                  <ul class="fc-color-picker" id="color-chooser">
+                    <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-light-blue" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-teal" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-yellow" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-orange" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-green" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-lime" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-red" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-purple" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
+                    <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
+                  </ul>
+                </div>
+                <!-- /btn-group -->
+                <div class="input-group">
+                  <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+  
+                  <div class="input-group-btn">
+                    <button id="add-new-event" type="button" class="btn btn-primary btn-flat">Add</button>
+                  </div>
+                  <!-- /btn-group -->
+                </div>
+                <!-- /input-group -->
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="box box-primary">
+              <div class="box-body no-padding">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href={{ asset('vendor/adminlte/dist/css/AdminLTE.css') }}>
 @stop
 
-@section('js')<!-- Page specific script -->
+@section('js')
+<!-- Page specific script -->
+<!-- fullCalendar -->
+<script src={{ asset('bower_components/moment/moment.js') }}></script>
+<script src={{ asset('bower_components/fullcalendar/dist/fullcalendar.min.js') }}></script>
+<!-- Page specific script -->
 <script>
   $(function () {
 

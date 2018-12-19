@@ -112,6 +112,7 @@ return [
         [
             'text'      =>      'Relawan Terdaftar',
             'icon'      =>      'graduation-cap',
+            'url'       =>      'admin/relawan/indeks',
             'submenu'   =>
             [
                 [
@@ -141,33 +142,7 @@ return [
         [
             'text'      =>      'Indeks Materi Pelajaran',
             'icon'      =>      'book',
-            'submenu'   =>
-            [
-                [
-                    'text'      =>      'Kelas 1',
-                    'url'       =>      'admin/matpel/kelas1',
-                ],
-                [
-                    'text'      =>      'Kelas 2',
-                    'url'       =>      'admin/matpel/kelas2',
-                ],
-                [
-                    'text'      =>      'Kelas 3',
-                    'url'       =>      'admin/matpel/kelas3',
-                ],
-                [
-                    'text'      =>      'Kelas 4',
-                    'url'       =>      'admin/matpel/kelas4',
-                ],
-                [
-                    'text'      =>      'Kelas 5',
-                    'url'       =>      'admin/matpel/kelas5',
-                ],
-                [
-                    'text'      =>      'Kelas 6',
-                    'url'       =>      'admin/matpel/kelas6',
-                ],
-            ],
+            'url'       =>      'admin/matpel',
         ],
 
         [

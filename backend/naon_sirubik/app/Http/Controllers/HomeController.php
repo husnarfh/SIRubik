@@ -53,9 +53,9 @@ class HomeController extends Controller
         return view('admin.indeks_relawan');
     }
 
-    public function kelas1()
+    public function matpel()
     {
-        return view('admin.kelas1');
+        return view('admin.matpel');
     }
 
     public function matpel_form()
