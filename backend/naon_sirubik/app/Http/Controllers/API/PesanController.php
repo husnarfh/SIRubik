@@ -64,11 +64,11 @@ class PesanController extends Controller
         // $from_id = 3;
         // $guest_id   = $id;
         $self_id = Auth::user()->id;
-
         $req = json_decode($request->getContent());
         $guest_id   = $req->other_id;
 
         $sign = $this->create_signature($guest_id, $self_id);
+        
         if($sign === NULL){
             return 'error. You can view yourself message to yourself';
         }                
@@ -93,8 +93,10 @@ class PesanController extends Controller
             // ->toSql();
             // ->paginate(6);
             ->get();
+        $row = Relawan::where('id', $guest_id)->first();
+        $other_name = $row["nama_lengkap"];
         $hasil["hasil"]   = $data;     
-        
+        $hasil["other_name"]   = $other_name;   
         return $hasil;
         
     }
@@ -111,9 +113,9 @@ class PesanController extends Controller
         ->groupBy('signature')
         ->orderBy('pesans.id', 'desc')
         ->get()
+        // ->first()
         ->pluck('signature')
         ;
-
         $arr =  array();
         $sebagian = array();
         foreach ($mess as $sign) {
@@ -138,7 +140,13 @@ class PesanController extends Controller
             ;
 
             if( $objek->from !== $self_id){  $objek->other_id= $objek->from;}
-            else {$objek->other_id = $objek->to;}
+            else {$objek->other_id = $objek->to; }
+            $row = Relawan::where('id', $objek->other_id)->first();
+            $image = $row["image"];
+            $other_name = $row["nama_lengkap"];
+            $objek->image = $image;
+            $objek->other_name = $other_name;
+
             // $sebagian = $this->retrieve($objek->other_id);
             // $objek->sebagian = $sebagian;
             // dd($sebagian);
