@@ -89,7 +89,7 @@ class PesanController extends Controller
                 'pesans.messages'
             )
             ->where('signature','=',$sign)
-            ->orderBy('pesans.id', 'desc')
+            ->orderBy('pesans.id', 'asc')
             // ->toSql();
             // ->paginate(6);
             ->get();
@@ -151,7 +151,23 @@ class PesanController extends Controller
             // $objek->sebagian = $sebagian;
             // dd($sebagian);
             $arr[] = $objek;
+            // $arr["id"] = $objek->id;
         }
+        // var_dump($arr);
+        // $key = array_column($arr, 'id');
+        // array_multisort($key, SORT_DESC, $arr);
+        // $wek = [];
+        // foreach ($arr as $key => $row)
+        // {
+            // $wek[$key]  = $row['wek'];
+        // }    
+        // array_multisort($wek, SORT_ASC, $arr);
+
+        // usort($arr, function($a,$b){return $a['id']-$b['id'];});
+
+        // usort($arr, function($a, $b) {
+        //     return $a['id'] <=> $b['id'];
+        // });        
         // $col = collect($arr);
         // $jumlah = $col->count();
         
