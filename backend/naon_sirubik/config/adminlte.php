@@ -157,32 +157,32 @@ return [
             'icon'  =>  'pencil-square-o',
         ],
         
-    //     'Lainnya',
-    //     [
-    //         'text' => 'Tentang Sistem',
-    //         'url'  => 'admin/tentang',
-    //         'icon' => 'institution',
-    //     ],
-    //     [
-    //         'text' => 'Bantuan',
-    //         'icon' => 'book',
-    //         'submenu'   =>
-    //         [
-    //             [
-    //                 'text'      =>      'Panduan Penggunaan',
-    //                 'url'       =>      'admin/bantuan',
-    //             ],
-    //             [
-    //                 'text'      =>      'FAQ',
-    //                 'url'       =>      'admin/faq',
-    //             ],
-    //             [
-    //                 'text'      =>      'Hubungi Pengembang',
-    //                 'url'       =>      'admin/kontak',
-    //             ],
-    //         ],
-    //     ],
-    // ],   
+        // 'Lainnya',
+        // [
+        //     'text' => 'Tentang Sistem',
+        //     'url'  => 'admin/tentang',
+        //     'icon' => 'institution',
+        // ],
+        // [
+        //     'text' => 'Bantuan',
+        //     'icon' => 'book',
+        //     'submenu'   =>
+        //     [
+        //         [
+        //             'text'      =>      'Panduan Penggunaan',
+        //             'url'       =>      'admin/bantuan',
+        //         ],
+        //         [
+        //             'text'      =>      'FAQ',
+        //             'url'       =>      'admin/faq',
+        //         ],
+        //         [
+        //             'text'      =>      'Hubungi Pengembang',
+        //             'url'       =>      'admin/kontak',
+        //         ],
+        //     ],
+        // ],
+    ],   
     /*
     |--------------------------------------------------------------------------
     | Menu Filters

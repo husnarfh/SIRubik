@@ -45,7 +45,7 @@
         <div class="small-box bg-teal">
             <div class="inner">
                 <h3>5</h3>
-                <p>Kegiatan Belajar Mengajar Bulan Ini</p>
+                <p>KBM Bulan Ini</p>
             </div>
             <div class="icon">
                 <i class="fa fa-user-plus"></i>

@@ -7,7 +7,8 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
-
+use \Illuminate\Container\Container as Container;
+use \Illuminate\Support\Facades\Facade as Facade;
 
 class Relawan extends Authenticatable 
 {
