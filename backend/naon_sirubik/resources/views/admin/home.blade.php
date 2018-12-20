@@ -48,7 +48,7 @@
                 <p>KBM Bulan Ini</p>
             </div>
             <div class="icon">
-                <i class="fa fa-user-plus"></i>
+                <i class="fa fa-check"></i>
             </div>
             <a href="/admin/relawan/kalender" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
