@@ -18,13 +18,13 @@
             <form action="{{ url(config('adminlte.register_url', 'register')) }}" method="post">
                 {!! csrf_field() !!}
 
-                <div class="form-group has-feedback {{ $errors->has('name') ? 'has-error' : '' }}">
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
+                <div class="form-group has-feedback {{ $errors->has('nama_lengkap') ? 'has-error' : '' }}">
+                    <input type="text" name="nama_lengkap" class="form-control" value="{{ old('nama_lengkap') }}"
                            placeholder="{{ trans('adminlte::adminlte.full_name') }}">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    @if ($errors->has('name'))
+                    @if ($errors->has('nama_lengkap'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
+                            <strong>{{ $errors->first('nama_lengkap') }}</strong>
                         </span>
                     @endif
                 </div>

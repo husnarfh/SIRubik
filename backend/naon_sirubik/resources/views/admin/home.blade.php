@@ -9,32 +9,31 @@
 @stop
 
 @section('content')
-<p>Welcome to this beautiful admin panel.</p>
 <div class="row">
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-purple">
+        <div class="small-box bg-blue">
             <div class="inner">
                 <h3>777</h3>
                 <p>Relawan Terdaftar</p>
             </div>
             <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="ion ion-ios-people"></i>
             </div>
-            <a href="/admin/relawan" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/admin/relawan/indeks" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-gray">
+        <div class="small-box bg-yellow">
             <div class="inner">
                 <h3>44</h3>
                 <p>Calon Relawan Baru</p>
             </div>
             <div class="icon">
-                <i class="ion ion-ios-people"></i>
+                <i class="ion ion-person-add"></i>
             </div>
             <a href="/admin/relawan/calon" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
@@ -45,13 +44,13 @@
         <!-- small box -->
         <div class="small-box bg-teal">
             <div class="inner">
-                <h3>44</h3>
-                <p>Calon Relawan Baru</p>
+                <h3>5</h3>
+                <p>Kegiatan Belajar Mengajar Bulan Ini</p>
             </div>
             <div class="icon">
-                <i class="ion ion-ios-people"></i>
+                <i class="fa fa-user-plus"></i>
             </div>
-            <a href="/admin/relawan/calon" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/admin/relawan/kalender" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 
@@ -61,81 +60,50 @@
         <div class="small-box bg-green">
             <div class="inner">
                 <h3>44</h3>
-                <p>Calon Relawan Baru</p>
+                <p>Materi Pelajaran Disimpan</p>
             </div>
             <div class="icon">
-                <i class="ion ion-ios-people"></i>
+                <i class="ion ion-folder"></i>
             </div>
-            <a href="/admin/relawan/calon" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/admin/matpel" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 </div>
 <div class="row">
-    
-        <div class="col-md-6">
-                <!-- Bar chart -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <i class="fa fa-bar-chart-o"></i>
-                        <h3 class="box-title">Bar Chart</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <div id="bar-chart" style="height: 300px;"></div>
-                    </div>
-                    <!-- /.box-body-->
-                </div>
-                <!-- /.box -->
-                <!-- Donut chart -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <i class="fa fa-bar-chart-o"></i>
-                        <h3 class="box-title">Donut Chart</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <div id="donut-chart" style="height: 300px;"></div>
-                    </div>
-                    <!-- /.box-body-->
-                </div>
-                <!-- /.box -->
-            </div>
-            <!-- /.col -->
-    <div class="col-md-6">
-        <!-- Line chart -->
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <i class="fa fa-bar-chart-o"></i>
-                <h3 class="box-title">Line Chart</h3>
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                </div>
-            </div>
-            <div class="box-body">
-                <div id="line-chart" style="height: 300px;"></div>
-            </div>
-            <!-- /.box-body-->
+  <div class="col-md-6">
+    <!-- Bar chart -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <i class="fa fa-bar-chart-o"></i>
+        <h3 class="box-title">Diagram Penambahan Materi Perbulannya</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
-        <!-- /.box -->
-        <!-- Area chart -->
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <i class="fa fa-bar-chart-o"></i>
-                <h3 class="box-title">Full Width Area Chart</h3>
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                </div>
-            </div>
-            <div class="box-body">
-                <div id="area-chart" style="height: 338px;" class="full-width-chart"></div>
-            </div>
-            <!-- /.box-body-->
+      </div>
+      <div class="box-body">
+        <div id="bar-chart" style="height: 300px;"></div>
+      </div>
+      <!-- /.box-body-->
+    </div>
+    <!-- /.box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-md-6">
+      <!-- Donut chart -->
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <i class="fa fa-bar-chart-o"></i>
+          <h3 class="box-title">Diagram Persebaran Materi Pelajaran</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+          </div>
         </div>
-        <!-- /.box -->
+        <div class="box-body">
+          <div id="donut-chart" style="height: 300px;"></div>
+        </div>
+        <!-- /.box-body-->
+      </div>
+      <!-- /.box -->
     </div>
     <!-- /.col -->
 </div>

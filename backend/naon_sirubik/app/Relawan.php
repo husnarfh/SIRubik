@@ -15,7 +15,7 @@ class Relawan extends Authenticatable
     use HasApiTokens, Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password','tgl_lahir','tgl_masuk','id_line'
+        'nama_lengkap', 'email', 'password','tanggal_lahir','tanggal_masuk','file_cv'
     ];
 
     /**

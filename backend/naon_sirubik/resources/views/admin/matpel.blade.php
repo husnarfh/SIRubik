@@ -3,119 +3,113 @@
 @extends('adminlte::page')
 
 @section('title', 'Materi Pelajaran Kelas 1')
-
+<!-- Tell the browser to be responsive to screen width -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href={{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}>
+<!-- Font Awesome -->
+<link rel="stylesheet" href={{ asset('bower_components/font-awesome/css/font-awesome.min.css')}}>
+<!-- Ionicons -->
+<link rel="stylesheet" href={{ asset('bower_components/Ionicons/css/ionicons.min.css')}}>
+<!-- DataTables -->
+<link rel="stylesheet" href={{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}>
+<!-- Theme style -->
+<link rel="stylesheet" href={{ asset('vendor/adminlte/dist/css/AdminLTE.min.css')}}>
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href={{ asset('vendor/adminlte/dist/css/skins/_all-skins.min.css')}}>
 @section('content_header')
     <h1>Indeks Materi Pelajaran</h1>
 @stop
 
 @section('content')
-<div class="tab-content">
-  <div class="tab-pane active" id="semester_1">
-    <div class="box box-primary">
-        <table id="tabel_semester_1" class="table table-bordered table-striped">
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Relawan Terdaftar</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
           <thead>
-          <tr>
-              <th>Nomor</th>
-              <th>Nama Pelajaran</th>
-              <th>Kelas</th>
-              <th>Nama Materi</th>
-              <th>Pengunggah</th>
-              <th>Diunggah Pada</th>
-              <th>Detail</th>
-          </tr>
+            <tr>
+                <th>Nomor</th>
+                <th>Nama Pelajaran</th>
+                <th>Kelas</th>
+                <th>Nama Materi</th>
+                <th>Pengunggah</th>
+                <th>Diubah Terakhir</th>
+                <th>Deskripsi</th>
+                <th>Detail</th>
+            </tr>
           </thead>
-
-
-{{--disini taro api yg dibutuhin
           <tbody>
-              @php
-                $mahasiswas = App\User::where('role','=','mahasiswa')->get();
-                $i=1;
-              @endphp
-              @foreach ($mahasiswas as $mahasiswa)
-              <tr>
-                  <td>{{$i++}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->id}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->name}}</td>
-                  <td>{{$mahasiswa->semester}}</td>
-                  <td>
-                    <div class="box-footer">
-                        <a href="/jadwalMHS/{{$mahasiswa->id}}"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
-                    <br>
-                    <br>
-                    <form action="{{route('disapproveJadwal', $mahasiswa->id)}}" method="post">{{csrf_field()}}
-                      <button type="submit" class="btn btn-danger">Hapus Keanggotaan</button>
-                    </form>
-                  </div>
-                  </td>
-                </tr>
-              @endforeach
-          </tbody> --}}
-          
-          {{-- ini cuman dummy --}}
-
-          <tbody>
-              <tr>
-                <td>1</td>
-                <td>Matematika</td>
-                <td>1</td>
-                <td>Matematika Diskrit</td>
-                <td>Pengajar Misterius</td>
-                <td>dd/yy/mm</td>
-                <td>
-                  <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
-                  <br><br>
-                  <form action="#" method="post">
+            @php
+            $materis = App\Materi::where('file_materi','=','hehe.pdf')->get();
+            $i=1;
+            @endphp
+            @foreach ($materis as $materi)
+            <tr>
+              <td>{{$i++}}</td>
+              <td>{{$materi->mata_pelajaran}}</td>
+              <td>{{$materi->kelas}}</td>
+              <td>{{$materi->nama_materi}}</td>
+              <td>{{$materi->id_uploader}}</td>
+              <td>{{$materi->updated_at}}</td>
+              <td>{{$materi->deskripsi}}</td>
+              <td>
+                <form>
+                  <a href="{{$materi->file_materi}}"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
+                  <hr>
                   <button type="submit" class="btn btn-danger">Hapus Materi</button>
-                  </form>
-                </td>
-              </tr>
+                </form>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+          <div class="box-footer">
+            <tfoot>
               <tr>
-                  <td>2</td>
-                  <td>Matematika</td>
-                  <td>2</td>
-                  <td>Matematika Spatial</td>
-                  <td>Pengajar Misterius</td>
-                  <td>dd/yy/mm</td>
-                  <td>
-                    <a href="#"><button type="submit" class="btn btn-primary">Lihat Detail</button></a>
-                    <br><br>
-                    <form action="#" method="post">
-                    <button type="submit" class="btn btn-danger">Hapus Materi</button>
-                    </form>
-                  </td>
-                </tr>
-              </tbody>
-              <tfoot>
-          <tr>
-            <th>Nomor</th>
-            <th>Nama Lengkap</th>
-            <th>Id</th>
-            <th>Alasan Masuk</th>
-            <th>Detail</th>
-          </tr>
-          </tfoot>
-        </tbody>
-        
+                <th>Nomor</th>
+                <th>Nama Pelajaran</th>
+                <th>Kelas</th>
+                <th>Nama Materi</th>
+                <th>Pengunggah</th>
+                <th>Diubah Terakhir</th>
+                <th>Deskripsi</th>
+                <th>Detail</th>
+              </tr>
+            </tfoot>
+          </div>
+        </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
   </div>
-  <!-- /.tab-pane -->
-  </div>
-</div>
+  <!-- /.col -->
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
-@section('js')<!-- Page specific script -->
+@section('js')
+<!-- DataTables -->
+<script src={{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}></script>
+<script src={{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}></script>
+<!-- page script -->
 <script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
 </script>
 @stop
